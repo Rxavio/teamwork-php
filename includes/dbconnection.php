@@ -10,9 +10,9 @@ define(strtoupper($key), $value);
 
 $connection = mysqli_connect(DB_HOST, DB_USER,DB_PASS,DB_NAME);
 
-if($connection) {
-echo "Database connected";
-}
+// if($connection) {
+// echo "Database connected";
+// }
 
 // $connection = mysqli_connect('localhost', 'root', 'godpro', 'cms');  
 // if($connection) {

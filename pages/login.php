@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../css/main.css"/>
   <link rel="stylesheet" href="../css/responsive.css"/>
 	<link rel="stylesheet" href="../css/nav.css"/>
-  <link rel="stylesheet" href="./css/login.css"/>
+  <link rel="stylesheet" href="../css/login.css"/>
         
      
 </head>
