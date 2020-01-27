@@ -1,4 +1,5 @@
 <?php  include "../includes/dbconnection.php"; ?>
+<?php  include "../includes/functions.php"; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +14,7 @@
   <link rel="stylesheet" href="../css/main.css"/>
   <link rel="stylesheet" href="../css/responsive.css"/>
 	<link rel="stylesheet" href="../css/nav.css"/>
-  <link rel="stylesheet" href="../css/create.css"/>
-        
-     
+  <link rel="stylesheet" href="../css/create.css"/>   
 </head>
 
 <body>
@@ -40,16 +39,17 @@
 
    if(isset($_POST['sign-up'])) {
           
-    $firstname    = $_POST['user_firstname'];
-    $lastname     = $_POST['user_lastname'];
-    $email        = $_POST['user_email'];
-    $password     = $_POST['user_password'];
+    $firstname    = escape($_POST['user_firstname']);
+    $lastname     = escape($_POST['user_lastname']);
+    $email        = escape($_POST['user_email']);
+    $user_role    = escape($_POST['user_role']);
+    $password     = escape($_POST['user_password']);
     
-    $password = password_hash( $password, PASSWORD_BCRYPT, array('cost' => 12));
+   $password = password_hash( $password, PASSWORD_BCRYPT, array('cost' => 12));
           
-      $query = "INSERT INTO users(user_firstname, user_lastname,user_email,user_password) ";
+      $query = "INSERT INTO users(user_firstname, user_lastname,user_email,user_password,user_role) ";
              
-      $query .= "VALUES('{$firstname}','{$lastname}','{$email}','{$password}') "; 
+      $query .= "VALUES('{$firstname}','{$lastname}','{$email}','{$password}','user') "; 
              
       $create_user_query = mysqli_query($connection, $query);  
 
@@ -57,7 +57,7 @@
         die("QUERY FAILED".mysqli_error($connection));
       }
 
-      //  echo "<p>User Created</p>"; 
+       echo "<p>User Created</p>"; 
 
    }
 ?>
@@ -75,6 +75,14 @@
 <input type="text"placeholder="Firstname" name="user_firstname" required="">
 <input type="text" placeholder="Lastname" name="user_lastname"required="">
 <input type="email" placeholder="Email" name="user_email" required="">
+
+
+<select name="user_role">
+  <option value="user">Select Options</option>
+  <option value="admin">Admin</option>
+  <option value="user">User</option>
+</select>
+    
 <input type="password" placeholder="password" name="user_password"required="" minlength="6">
 
 

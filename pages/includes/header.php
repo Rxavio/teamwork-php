@@ -1,3 +1,34 @@
+<?php ob_start(); ?>
+<?php include "../includes/dbconnection.php"; ?>
+
+<?php session_start(); ?>
+
+
+<?php 
+
+if(!isset($_SESSION['user_role'])) {
+
+    header("Location:../index.php");
+
+    }
+
+if(isset($_SESSION['user_role'])) {
+
+    if($_SESSION['user_role']!=='admin'){
+        header("Location:../index.php");
+    }
+
+} 
+
+
+
+
+ ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +71,7 @@
     <li><a href="./write-article.php">New Article</a></li>
   <li><a href="./view-articles.php">Shared Articles</a></li>
   <li><a href="./edit-delete-article.php">My Articles</a></li>
-  <li><a href="./login.php">Logout</a><li>
+  
+  <li><a href="./logout.php">Logout</a><li>
 </ul>
 </nav>			
