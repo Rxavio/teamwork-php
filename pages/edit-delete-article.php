@@ -39,5 +39,7 @@ Teamwork is one of the most important aspects of the modern workplace. However, 
     </div>
 </div>
 </div> 
+</div>
  <!--footer--> 
+ 
  <?php  include "includes/footer.php"; ?>
