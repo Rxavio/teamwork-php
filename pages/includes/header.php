@@ -1,28 +1,26 @@
 <?php ob_start(); ?>
 <?php include "../includes/dbconnection.php"; ?>
-
-
 <?php session_start(); ?>
 
 
 <?php 
 
-if(!isset($_SESSION['user_role'])) {
+//if(!isset($_SESSION['user_role'])) {
 
-    header("Location:../index.php");
+   // header("Location:../index.php");
 
-    }
+  //  }
 
-if(isset($_SESSION['user_role'])) {
+//(isset($_SESSION['user_role'])) {
 
-    if($_SESSION['user_role']!=='admin'){
-        header("Location:../index.php");
-    }
+   // if($_SESSION['user_role'] =='admin'){
+      //  header("Location:../admin");
+   // }
+   // else{
+     //  header("Location:./index.php");
+   // }
 
-} 
-
-
-
+//} 
 
  ?>
 
@@ -65,8 +63,8 @@ if(isset($_SESSION['user_role'])) {
     </div>
 <ul class="nav-links">
     <!-- <li> <a class="active" href="./comment-article.php">Comment</a></li> -->
-    <li><a href="./write-article.php">New Article</a></li>
-  <li><a href="./view-articles.php">Shared Articles</a></li>
+    <!-- <li><a href="./write-article.php">New Article</a></li> -->
+  <li><a href="./index.php">Shared Articles</a></li>
   <li><a href="./edit-delete-article.php">My Articles</a></li>
 
   <li><a href="./logout.php">Logout</a><li>

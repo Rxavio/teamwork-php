@@ -46,7 +46,7 @@ $post_content = substr($row['post_content'],0,202);
     <h4><?php echo $post_title ?></h4>
     <hr>
     <br>
-    <img src="./photos/<?php echo $post_image;?>">
+    <img src="./images/<?php echo $post_image;?>">
     <p><?php echo $post_content ?></p>  
     <h5 class="author">By <?php echo $post_author ?> <i class="date"><?php echo $post_date ?></i></h5>
 

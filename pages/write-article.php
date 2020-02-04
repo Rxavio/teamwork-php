@@ -3,27 +3,36 @@
 
 <?php
 
+   $msg="";
+ 
+
    if(isset($_POST['create_post'])) {
     $post_author = escape($_POST['post_author']);
     $post_title = escape($_POST['title']);
     $post_image = escape($_FILES['image']['name']);
-    $post_image_temp =escape($_FILES['image']['tmp_name']);
+    //$post_image_temp =escape($_FILES['image']['tmp_name']);
     $post_content =escape($_POST['post_content']);
     $post_date = escape(date('d-m-y'));
    
-
-       
-        move_uploaded_file($post_image_temp, "./photos/$post_image" );
+    $target="./images/".basename($_FILES['image']['name']);
+       // move_uploaded_file($post_image_temp, "./photos/$post_image" );
           
       $query = "INSERT INTO posts(post_author,post_title,post_date,post_image,post_content)  ";
              
       $query .= "VALUES('{$post_author}','{$post_title}',now(),'{$post_image}','{$post_content}') "; 
              
       $create_post_query = mysqli_query($connection, $query);
+
+
+      if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+		$msg="uploaded well";
+	}else{
+		$msg="error in uploading";
+	}
       
-      if(!$create_post_query){
-        die("QUERY FAILED".mysqli_error($connection));
-    }
+    //   if(!$create_post_query){
+    //     die("QUERY FAILED".mysqli_error($connection));
+    // }
 
     //   confirmQuery( $create_post_query);
 
@@ -48,7 +57,7 @@
             <input type="text" placeholder="Post Author" name="post_author">
 
             <label for="photo">Upload an Image</label>
-            <input type="file"name="image" id="image">
+            <input type="file"name="image">
 
             <textarea name="post_content" rows="10" cols="50" placeholder="write your article..." required="" minlength="30" ></textarea>
             
