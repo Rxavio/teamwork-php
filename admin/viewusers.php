@@ -57,13 +57,13 @@
 
   ?> 
 
-           <form method="post">   
-          <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
-            <?php   
-              echo '<td><button type="submit" name="delete">Delete</button></td>';
-            ?>     
-          </form>
-          <?php
+<form method="post">   
+<input type="hidden" name="user_id" value="<?php echo $user_id ?>">
+  <?php   
+    echo '<td><button type="submit" name="delete">Delete</button></td>';
+  ?>     
+</form>
+<?php
 
       echo "</tr>";
       }    
