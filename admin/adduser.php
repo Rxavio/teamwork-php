@@ -5,6 +5,7 @@
 <?php
    
    $msg="";
+   $response="";
 
    if(isset($_POST['sign-up'])) {
           
@@ -37,7 +38,7 @@
         die("QUERY FAILED".mysqli_error($connection));
       }
 
-       echo "<p>User Created</p>"; 
+      $response="User Succesfully Added";
 
    }
 ?>
@@ -47,10 +48,11 @@
 
 
  <div class="create-page">
+ <?php
+  echo $response;
+  ?>
 <div class="create-form">
-<!-- <form class="login-action" action="./login.php" autocomplete="on"> -->
-
-<form action="" method="post" enctype="multipart/form-data">  
+<form action="" method="post" enctype="multipart/form-data"autocomplete="on">
 
   <h3>Create account</h3> <br>
 

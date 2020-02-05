@@ -1,4 +1,5 @@
 <?php  include "includes/header.php";?>	
+<?php  include "../includes/functions.php"; ?>
    
 <div class="post-list"> 
     <table class="centerTable">
@@ -53,25 +54,38 @@
   echo "<td> <a href=''>admin</a></td>";
   echo "<td><a href=''> user</a></td>";
   echo "<td><button><a href='profile.php'>Edit</a></button></td>";
-  echo "<td><button><a href=''>Delete</a></button></td>";
 
-  echo "</tr>";
-}    
-?> 
+  ?> 
 
-  
-                      
-        </tbody>
+           <form method="post">   
+          <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
+            <?php   
+              echo '<td><button type="submit" name="delete">Delete</button></td>';
+            ?>     
+          </form>
+          <?php
+
+      echo "</tr>";
+      }    
+      ?>               
+      </tbody>
       </table>       
 </div>
-
- 
-  
 
 </div>
 </div>
 </div>
 
 <!-- Footer-->
+<?php
+if(isset($_POST['delete'])){
 
+if(isset($_SESSION['user_role'])) {
+$the_user_id = escape($_POST['user_id']);
+$query = "DELETE FROM users WHERE user_id = {$the_user_id} ";
+}
+$delete_query = mysqli_query($connection, $query);
+header("Location: ./viewusers.php");
+}
 
+?>

@@ -3,6 +3,7 @@
 
 <?php
 $msg="";
+$response="";
  
 
  if(isset($_POST['create_post'])) {
@@ -26,13 +27,9 @@ $msg="";
       $msg="error in uploading";
   }
     
-    if(!$create_post_query){
-      die("QUERY FAILED".mysqli_error($connection));
-  }
+  confirmQuery( $create_post_query);
 
-  //   confirmQuery( $create_post_query);
-
-    echo "<p>Post Added</p>";
+  $response="post Succesfully Added";
 
  }
 
@@ -40,21 +37,24 @@ $msg="";
 
 
      <div class="create-article-page">
-            <div class="article-form">
-            <form action="" method="post" enctype="multipart/form-data">    
-                <h3>Add an article</h3><br>
+      <?php
+      echo $response;
+      ?>
+    <div class="article-form">
+    <form action="" method="post" enctype="multipart/form-data"autocomplete="on">
+        <h3>Add an article</h3><br>
 
-            <input type="text"placeholder="Article Title" name="title" required="" minlength="6" >
+    <input type="text"placeholder="Article Title" name="title" required="" minlength="6" >
 
-            <input type="text" placeholder="Post Author" name="post_author">
-            
-             <label class="lblphoto" for="photo">Upload Image</label>
-            <input type="file"name="image" id="image">
+    <input type="text" placeholder="Post Author" name="post_author">
+    
+      <label class="lblphoto" for="photo">Upload Image</label>
+    <input type="file"name="image" id="image">
 
-    <textarea name="post_content" rows="10" cols="50" placeholder="write your article..." required="" minlength="30" ></textarea>
+<textarea name="post_content" rows="10" cols="50" placeholder="write your article..." required="" minlength="30" ></textarea>
 
-                <button type="submit" name="create_post" >Post article</button>
-                </form>
+        <button type="submit" name="create_post" >Post article</button>
+        </form>
     </div>
     </div>
 
