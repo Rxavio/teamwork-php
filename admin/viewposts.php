@@ -1,4 +1,5 @@
 <?php  include "includes/header.php";?>	
+<?php  include "../includes/functions.php"; ?>
    
 <div class="post-list"> 
     <table class="centerTable">
@@ -65,16 +66,25 @@
           echo"<td><a href=''>95</a></td>";
           echo "<td><a href='../post.php?p_id={$post_id}'>View Post</a></td>";
            echo"<td><button><a href='updatepost.php'>Edit</a></button></td>";
-          echo "<td><button><a href=''>Delete</a></button></td>";
+           ?> 
+
+           <form method="post">   
+          <input type="hidden" name="post_id" value="<?php echo $post_id ?>">
+            <?php   
+              echo '<td><button type="submit" name="delete">Delete</button></td>';
+              //echo '<td><input class="btn btn-danger" type="submit" name="delete" value="Delete"></td>';
+            ?>     
+          </form>
+         
  
+          <?php
 
-
-echo "</tr>";
-}    
-?> 
- </tbody>
-</table>       
-</div>
+      echo "</tr>";
+      }    
+      ?> 
+      </tbody>
+      </table>       
+      </div>
 
  
   
@@ -84,6 +94,17 @@ echo "</tr>";
 </div>
 
 <!-- Footer-->
+<?php
+if(isset($_POST['delete'])){
+
+if(isset($_SESSION['user_role'])) {
+$the_post_id = escape($_POST['post_id']);
+$query = "DELETE FROM posts WHERE post_id = {$the_post_id} ";
+}
+$delete_query = mysqli_query($connection, $query);
+header("Location: ./viewposts.php");
 
 
+}
 
+?>
