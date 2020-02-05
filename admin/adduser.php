@@ -10,6 +10,7 @@
           
     $firstname    = escape($_POST['user_firstname']);
     $lastname     = escape($_POST['user_lastname']);
+    $username        = escape($_POST['username']);
     $email        = escape($_POST['user_email']);
     $user_role    = escape($_POST['user_role']);
     $password     = escape($_POST['user_password']);
@@ -20,9 +21,9 @@
         
      $target="../pages/images/".basename($_FILES['image']['name']); 
 
-      $query = "INSERT INTO users(user_firstname, user_lastname,user_email,user_password,user_role,user_profile,user_created) ";
+      $query = "INSERT INTO users(user_firstname, user_lastname,username,user_email,user_password,user_role,user_profile,user_created) ";
              
-      $query .= "VALUES('{$firstname}','{$lastname}','{$email}','{$password}','user','{$user_profile}',now() ) "; 
+      $query .= "VALUES('{$firstname}','{$lastname}','{$username}','{$email}','{$password}','user','{$user_profile}',now() ) "; 
              
       $create_user_query = mysqli_query($connection, $query);  
 
@@ -55,6 +56,7 @@
 
 <input type="text"placeholder="Firstname" name="user_firstname" required="">
 <input type="text" placeholder="Lastname" name="user_lastname"required="">
+<input type="text" placeholder="Username" name="username" required="">
 <input type="email" placeholder="Email" name="user_email" required="">
 <select name="user_role">
   <option value="user">Select Options</option>

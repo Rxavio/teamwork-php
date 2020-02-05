@@ -64,8 +64,8 @@
 <ul class="nav-links">
     <!-- <li> <a class="active" href="./comment-article.php">Comment</a></li> -->
     <!-- <li><a href="./write-article.php">New Article</a></li> -->
-  <li><a href="./index.php">Shared Articles</a></li>
-  <li><a href="./edit-delete-article.php">My Articles</a></li>
+  <li><a href="./index.php">All Posts</a></li>
+  <li><a href="../admin">Admin Area</a></li>
 
   <li><a href="./logout.php">Logout</a><li>
 </ul>

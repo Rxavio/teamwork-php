@@ -3,15 +3,15 @@
 <?php 
 if(isset($_POST['login'])) {
 
-	$email=$_POST['email'];
+	$username=$_POST['username'];
    $password=$_POST['password'];
 
-	 $email=mysqli_real_escape_string($connection,$email);
+	 $username=mysqli_real_escape_string($connection,$username);
 	 $password=mysqli_real_escape_string($connection,$password);
 
 
 
-	 $query="SELECT * FROM users WHERE user_email='{$email}' ";
+	 $query="SELECT * FROM users WHERE username='{$username}' ";
 	 $select_user_query=mysqli_query($connection,$query);
 	 if(!$select_user_query){
 	 	die("QUERY FAILED".mysqli_error($connection));
@@ -20,6 +20,7 @@ if(isset($_POST['login'])) {
     $db_user_id=$row['user_id'];
 		$db_user_firstname=$row['user_firstname'];
     $db_user_lastname=$row['user_lastname'];
+    $db_username=$row['username'];
     $db_user_email=$row['user_email'];
     $db_user_role=$row['user_role'];
     $db_user_password=$row['user_password'];
@@ -27,6 +28,7 @@ if(isset($_POST['login'])) {
 
 //  if($email === $db_user_email && $password === $db_user_password){
 if(password_verify($password,$db_user_password)){
+$_SESSION['username']=$db_username;
 $_SESSION['email']=$db_user_email;
 $_SESSION['firstname']=$db_user_firstname;
 $_SESSION['lastname']=$db_user_lastname;
@@ -84,7 +86,7 @@ else{
 
 	<img src="../assets/icons/useravt.JPG">
 	<h3>Enter your credentials to log in</h3><br>
-	<input type="email"name="email"placeholder="Enter your Email" required="">
+	<input type="text"name="username"placeholder="Enter your Username" required="">
 	<input type="password"name="password"placeholder="Enter your Password" required="" minlength="6">
 	<p>Not yet Registered? <a href="./register.php"> &nbsp;&nbsp;&nbsp;<u>Sign Up</u></a></p>
 

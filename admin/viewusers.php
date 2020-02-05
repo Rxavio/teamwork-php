@@ -7,6 +7,7 @@
             <th>ID</th>
             <th>Firstname</th>
             <th>Lastname</th>
+            <th>Username</th>
             <th>Email</th>
             <th>Role</th>
             <th>Profile</th>
@@ -31,6 +32,7 @@
   $user_id = $row['user_id'];
   $user_firstname = $row['user_firstname'];
    $user_lastname = $row['user_lastname'];
+   $username = $row['username'];
   $user_email = $row['user_email'];
   $user_password = $row['user_password'];
   $user_role = $row['user_role'];
@@ -43,6 +45,7 @@
   echo"<td>$user_id</td>";
   echo"<td>$user_firstname</td>";
   echo"<td>$user_lastname</td>";
+  echo"<td>$username</td>";
   echo"<td>$user_email</td>";
   echo"<td>$user_role</td>";
   echo "<td><img src='../pages/images/$user_profile' alt='image' width='70' height='35'> </td>";
