@@ -34,22 +34,22 @@
 
 
 
-              <?php
+     <?php
    
-
-   if(isset($_POST['sign-up'])) {
-          
-    $firstname    = escape($_POST['user_firstname']);
-    $lastname     = escape($_POST['user_lastname']);
-    $email        = escape($_POST['user_email']);
-    $user_role    = escape($_POST['user_role']);
-    $password     = escape($_POST['user_password']);
+   if(isset($_POST['sign-up'])) {     
+    $firstname      = escape($_POST['user_firstname']);
+    $lastname       = escape($_POST['user_lastname']);
+    $username       = escape($_POST['username']);
+    $email          = escape($_POST['user_email']);
+    $user_role      = escape($_POST['user_role']);
+    $password        = escape($_POST['user_password']);
+    $user_created    = escape(date('d-m-y'));
     
    $password = password_hash( $password, PASSWORD_BCRYPT, array('cost' => 12));
           
-      $query = "INSERT INTO users(user_firstname, user_lastname,user_email,user_password,user_role) ";
+      $query = "INSERT INTO users(user_firstname, user_lastname,username,user_email,user_password,user_role,user_created) ";
              
-      $query .= "VALUES('{$firstname}','{$lastname}','{$email}','{$password}','user') "; 
+      $query .= "VALUES('{$firstname}','{$lastname}','{$username}','{$email}','{$password}','user',now()) "; 
              
       $create_user_query = mysqli_query($connection, $query);  
 
@@ -74,21 +74,15 @@
 
 <input type="text"placeholder="Firstname" name="user_firstname" required="">
 <input type="text" placeholder="Lastname" name="user_lastname"required="">
+<input type="text" placeholder="Username" name="username"required="">
 <input type="email" placeholder="Email" name="user_email" required="">
-
-
 <select name="user_role">
   <option value="user">Select Options</option>
   <option value="admin">Admin</option>
   <option value="user">User</option>
-</select>
-    
+</select>   
 <input type="password" placeholder="password" name="user_password"required="" minlength="6">
-
-
-
 <p>Already Registered?<a href="./login.php">&nbsp;&nbsp;&nbsp;<u>Login</u></a></p>
-
 <button type="submit" name="sign-up" >sign up</button>
 </form>
 

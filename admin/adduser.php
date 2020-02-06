@@ -9,12 +9,12 @@
 
    if(isset($_POST['sign-up'])) {
           
-    $firstname    = escape($_POST['user_firstname']);
-    $lastname     = escape($_POST['user_lastname']);
+    $firstname        = escape($_POST['user_firstname']);
+    $lastname       = escape($_POST['user_lastname']);
     $username        = escape($_POST['username']);
-    $email        = escape($_POST['user_email']);
-    $user_role    = escape($_POST['user_role']);
-    $password     = escape($_POST['user_password']);
+    $email           = escape($_POST['user_email']);
+    $user_role        = escape($_POST['user_role']);
+    $password         = escape($_POST['user_password']);
     $user_profile      = escape($_FILES['image']['name']);
     $user_created      = escape(date('d-m-y'));
     
