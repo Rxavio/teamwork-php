@@ -53,7 +53,10 @@
   echo"<td>$user_created</td>";
   echo "<td> <a href=''>admin</a></td>";
   echo "<td><a href=''> user</a></td>";
-  echo "<td><button><a href='profile.php'>Edit</a></button></td>";
+
+  //echo "<td><button><a href='profile.php'>Edit</a></button></td>";
+
+  echo "<td><button><a href='updateuser.php?p_id={$user_id}'>Edit</a></button></td>";
 
   ?> 
 

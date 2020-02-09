@@ -93,7 +93,6 @@ if(isset($_POST['update_profile'])) {
 
 }
 }
-
 ?>
  <div class="create-page">
  <?php
