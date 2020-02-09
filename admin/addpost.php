@@ -8,7 +8,7 @@ $response="";
 
  if(isset($_POST['create_post'])) {
   $post_author = escape($_POST['post_author']);
-  $post_title = escape($_POST['title']);
+  $post_title = escape($_POST['post_title']);
   $post_image = escape($_FILES['image']['name']);
   $post_content =escape($_POST['post_content']);
   $post_date = escape(date('d-m-y'));
@@ -44,7 +44,7 @@ $response="";
     <form action="" method="post" enctype="multipart/form-data"autocomplete="on">
         <h3>Add an article</h3><br>
 
-    <input type="text"placeholder="Article Title" name="title" required="" minlength="6" >
+    <input type="text"placeholder="Article Title" name="post_title" required="" minlength="6" >
 
     <input type="text" placeholder="Post Author" name="post_author">
     

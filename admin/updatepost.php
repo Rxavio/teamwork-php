@@ -20,6 +20,52 @@ while($row = mysqli_fetch_assoc($select_post_by_id)) {
  } 
 ?>
 
+<?php
+//update the field
+if(isset($_POST['update_post'])) {
+   
+    $post_title =escape($_POST['post_title']);
+    $post_author =escape($_POST['post_author']);
+    $post_image = escape($_FILES['image']['name']);
+    $post_content = escape($_POST['post_content']);
+
+    $target="../pages/images/".basename($_FILES['image']['name']); 
+
+    if(empty($post_image)) {
+        $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
+        $select_image = mysqli_query($connection,$query);
+            
+        while($row = mysqli_fetch_array($select_image)) {
+            
+           $post_image = $row['post_image'];
+        }       
+      }
+
+    $query = "UPDATE posts SET ";
+    $query .="post_title  = '{$post_title}', ";
+    $query .="post_author  = '{$post_author}', ";
+    // $query .="post_date   =  now(), ";
+    $query .="post_content= '{$post_content}', ";
+    $query .="post_image  = '{$post_image}' ";
+    $query .= "WHERE post_id = {$the_post_id} ";
+  
+  $update_post = mysqli_query($connection,$query);
+
+  if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+    $msg="uploaded well";
+}else{
+    $msg="error in uploading";
+}
+   
+  confirmQuery($update_post);
+        
+  echo "<p>Post Updated.</p>";
+  //echo "<p class='bg-success'>Post Updated. <a href='../post.php?p_id={$the_post_id}'>View Post </a> or <a href='posts.php'>Edit More Posts</a></p>";
+
+}
+?>
+
+
  <div class="create-page">
 <div class="create-form">
 <form action="" method="post" enctype="multipart/form-data">  
