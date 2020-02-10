@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --primaryColor: rgb(40, 106, 247);
   --mainWhite: #ffffff;
   --mainGrey: #ececec;
@@ -52,6 +52,76 @@
  
 }
 
+.info-card .btncomment{
+  background: var(--mainGrey);
+  width: 70px;
+  height: 30px;
+  padding: 10px;
+  color: var(--mainWhite);
+  letter-spacing: var(--mainSpacing); 
+  border-radius: 20px;
+  margin-top: -25px;
+  float: right;
+}
+.btncomment a{
+  margin-left: -15px;
+  margin-top: 10px;
+  float: left;
+}
+
+.btncomment a b{
+  margin-left: 4px;
+  margin-top: -15px;
+  float: right;
+  color: var(--primaryColor);
+  font-size: 14px;
+}
+.btncomment a b:hover{
+  
+   color: red;
+}
+
+.info-card .btnlike{
+  background: var(--mainGrey);
+  width: 70px;
+  height: 30px;
+  padding: 10px;
+  color: var(--mainWhite);
+  letter-spacing: var(--mainSpacing); 
+  border-radius: 20px;
+  margin-top: -25px;
+  float: left;
+}
+
+
+.btnlike a{
+ margin-left: -15px;
+  margin-top: 10px;
+  float: left;
+}
+
+.btnlike a b{
+  margin-left: 4px;
+  margin-top: -15px;
+  color: var(--primaryColor);
+  font-size: 14px;
+  float: left;
+   
+}
+.btnlike b:hover{
+  
+   color: red;
+}
+.info-card .more{
+    border-bottom:1px solid #e1e1e1;
+    height: 35px;
+    
+} 
+
+a{
+  text-decoration: none;
+  color: var(--mainBlack);
+}
 
 .info-card  {
   height: auto;					
@@ -74,6 +144,7 @@
 .info-card p{
     text-align: left;
     letter-spacing: var(--mainSpacing); 
+    border-bottom: 1px solid #e1e1e1;
 }
 
 .info-card .author {
@@ -147,4 +218,4 @@
 }
 
 
-
+ */
