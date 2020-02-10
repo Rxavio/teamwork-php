@@ -1,23 +1,44 @@
 <?php  include "includes/header.php"; ?>
+
     <!-- comment an article-->
     <div class="comment-article-page">
 
         <div class="comment-form">
         
-         <h3>Feel Free To Write a Comment on any Articles</h3> 
+         <h3>Feel Free To Write a Comment</h3> 
+
+         
+<?php
+
+$query = "SELECT * FROM posts ORDER BY post_id DESC ";
+$select_all_posts_query = mysqli_query($connection,$query);
+while($row = mysqli_fetch_assoc($select_all_posts_query)) {
+$post_id = $row['post_id'];
+$post_title = $row['post_title'];
+$post_author = $row['post_author'];
+$post_date = $row['post_date'];
+$post_image = $row['post_image'];
+$post_content = $row['post_content'];
+//}
+ ?>
+
          
 <!-- comment articles-->
-
-
 <div class="info-card">
-<h4>The Benefits of Online Collaboration Tools</h4>
-<img src="../assets/images/banner.jpg">
-<p>
-Teamwork is one of the most important aspects of the modern workplace. However, widespread Internet availability means that members of the team could be just about anywhere in the world. So for teamwork to be effective, it’s important for companies to adopt modern work practices and technologies that help co-workers, wherever they are, share their work in a simple and efficient way. This is where a good online collaboration tool comes in. If you’re contemplating adopting--or proposing the adoption of--online collaboration tools, the list of online collaboration benefits below may help you and your organization make a decision on this useful technology.
-</p> 
-<h5 class="author"> Written By Xavio <i class="date">2019-08-12</i></h5>
-<i class="flag-article"><a href="./reason.php"><img src="../assets/fonts/flag-regular.svg" class="icon"/></a></i>
+    <h4><?php echo $post_title ?></h4>
+    <hr>
+    <br>
+    <img src="./images/<?php echo $post_image;?>">
+    <p><?php echo $post_content ?></p>  
+    <h5 class="author">By <?php echo $post_author ?> <i class="date"><?php echo $post_date ?></i></h5>
+
+    <a href="./comment-article.php">
+    <i class="comment-articles"><img src="../assets/fonts/comment-solid.svg" class="icon"/></i>
+    </a>
+
 </div>
+
+
 
 <div class="comment">
   <form class="comment-action" action="./comment-article.php">
@@ -39,7 +60,7 @@ Teamwork is one of the most important aspects of the modern workplace. However, 
 <input type="text"placeholder="write your comment..." name="comment" id="comment" required="">  
 </form>
 </div>
-
+<?php } ?>
 
 </div>
 </div>   
