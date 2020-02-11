@@ -7,7 +7,7 @@
           <tr>
           <th><input id="selectAllBoxes" type="checkbox"></th>
             <th>P_ID</th>
-            <th>Author</th>
+            <th>By</th>
             <th>Title</th>
             <th>Created</th>
             <th>Image</th>
@@ -41,7 +41,7 @@
   $post_content = substr($row['post_content'],0,20);
   // $post_tags = $row['post_tags'];
 
-  // $post_views_count = $row['post_views_count'];
+  //$post_comment_count = 420;
 
   echo "<tr>";
   ?>
@@ -62,9 +62,22 @@
 
           echo"<td>published</td>";
           echo "<td>coding</td>";
-          echo "<td><a href=''>30</a></td>";
+
+         // echo "<td><a href=''>30</a></td>";
+
+         //echo "<td> $post_comment_count</td>";
+
+         $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
+         $send_comment_query = mysqli_query($connection, $query);
+
+         $row = mysqli_fetch_array($send_comment_query);
+         $comment_id = $row['comment_id'];
+         $count_comments = mysqli_num_rows($send_comment_query);
+         echo "<td><a href='post_comments.php?id=$post_id'>$count_comments</a></td>";
+         
           echo"<td><a href=''>95</a></td>";
-          echo "<td><a href='../post.php?p_id={$post_id}'>View Post</a></td>";
+
+          echo "<td><a href='../pages/comment-article.php?p_id={$post_id}'>View Post</a></td>";
           
           echo "<td><button><a href='updatepost.php?p_id={$post_id}'>Edit</a></button></td>";
            ?> 

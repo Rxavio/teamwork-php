@@ -29,10 +29,10 @@ while($row = mysqli_fetch_assoc($select_comments)) {
 $comment_id = $row['comment_id'];
 $comment_post_id = $row['comment_post_id'];
 $comment_author = $row['comment_author'];
-$comment_content = $row['comment_content'];
 $comment_email = $row['comment_email'];
 $comment_date = $row['comment_date'];
 $comment_status = $row['comment_status'];
+$comment_content = substr($row['comment_content'],0,20);
 
 
 echo "<tr>";
@@ -42,7 +42,7 @@ echo "<td> $comment_author</td>";
 echo "<td> $comment_email</td>";
 echo "<td> $comment_content</td>";
 echo "<td> $comment_date</td>";
- echo "<td> $comment_status</td>";
+echo "<td> $comment_status</td>";
 
  //echo "<td> some title</td>";
 
@@ -67,28 +67,8 @@ echo "<td> $comment_date</td>";
 </tbody>
 </table>
 
-
-<!-- <tr>
-  <td>1</td>
-  <td>Lizzo</td>
-  <td>lizzo@gmail.com</td>
-  <td>Cool stuff buddy</td>
-  <td> 2020-02-02</td>
-  <td>Approve</td>
-  <td><a href="">The benefits of learning coding stuffs</a></td>
-  <td><a href="">Approve</a></td>
-  <td><a href="">Unapprove</a></td>
-  <td><button><a href="comments.php">Delete</a></button></td>
-</tr> -->
-
-   
-<!--                       
-        </tbody>
-      </table>        -->
 </div>
 
- 
-  
 
 </div>
 </div>
