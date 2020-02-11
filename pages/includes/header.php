@@ -2,32 +2,6 @@
 <?php include "../includes/dbconnection.php"; ?>
 <?php session_start(); ?>
 
-
-<?php 
-
-//if(!isset($_SESSION['user_role'])) {
-
-   // header("Location:../index.php");
-
-  //  }
-
-//(isset($_SESSION['user_role'])) {
-
-   // if($_SESSION['user_role'] =='admin'){
-      //  header("Location:../admin");
-   // }
-   // else{
-     //  header("Location:./index.php");
-   // }
-
-//} 
-
- ?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,8 +37,6 @@
   <a href="../index.php"> <img src="../assets/images/team.png"></a>
     </div>
 <ul class="nav-links">
-    <!-- <li> <a class="active" href="./comment-article.php">Comment</a></li> -->
-    <!-- <li><a href="./write-article.php">New Article</a></li> -->
   <li><a href="./index.php">All Posts</a></li>
   <li><a href="../admin">Admin Area</a></li>
 

@@ -52,7 +52,6 @@
   </div>
 
 </div>
-
 <?php 
 
 if(isset($_POST['create_comment'])) {
