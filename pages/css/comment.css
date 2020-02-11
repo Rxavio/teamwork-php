@@ -21,6 +21,7 @@
     z-index: 1;
     background: rgb(252, 250, 250);
     width: 100%;
+    height: auto;
     margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
@@ -102,6 +103,8 @@
    height: auto; 
    background: var(--mainGrey);
    border-radius: 10px;
+   margin-bottom: 5px;
+   border: 1px solid #e1e1e1;
   }
   .comment .addcomment input{
     width: 90%;
@@ -111,6 +114,8 @@
   .comment .addcomment button{
    cursor: pointer;
     margin-bottom: 5px;
+    background: var(--primaryColor);
+    
   }
   .comment h4{
     float: left;
