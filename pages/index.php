@@ -70,7 +70,8 @@ $post_content = substr($row['post_content'],0,202);
     </section>
 
      <section class="btncomment">
-    <a href="./comment-article.php">
+    <a href="comment-article.php?p_id=<?php echo $post_id; ?>">
+    
     <img src="../assets/icons/comment.png" class="icon"/> <b>50</b>
     </a>
     </section>

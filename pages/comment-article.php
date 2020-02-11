@@ -45,7 +45,7 @@ $post_content = $row['post_content'];
     </section>
 
      <section class="btncomment">
-    <a href="./comment-article.php">
+    <a href="#">
     <img src="../assets/icons/comment.png" class="icon"/> <b>50</b>
     </a>
     </section>
@@ -54,32 +54,85 @@ $post_content = $row['post_content'];
 
 </div>
 
-<!-- comments -->
+<?php 
+
+if(isset($_POST['create_comment'])) {
+
+    $the_post_id = $_GET['p_id'];
+    $comment_author = $_POST['comment_author'];
+    $comment_email = $_POST['comment_email'];
+    $comment_content = $_POST['comment_content'];
+    if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content)) {
+
+        $query = "INSERT INTO comments (comment_post_id,comment_author, comment_email, comment_content, comment_status,comment_date)";
+        $query .= "VALUES ($the_post_id ,'{$comment_author}','{$comment_email}','{$comment_content }', 'approved',now())";
+
+        $create_comment_query = mysqli_query($connection, $query);
+
+        if (!$create_comment_query) {
+            die('QUERY FAILED' . mysqli_error($connection));
+
+        }
+
+    }
+
+}
+
+?> 
+
 <div class="comment">
-  <form class="comment-action" action="./comment-article.php">
+
+<form action="" method="post" enctype="multipart/form-data"autocomplete="on">
+<h4>Leave a Comment:</h4>
+<div class="addcomment">
+   <input type="text" name="comment_author" placeholder="Enter your name ..."> 
+  <input type="email" name="comment_email" placeholder="Enter Email ...">
+  <input type="text" name="comment_content" placeholder="write your comment..." > 
+
+   <button type="submit" name="create_comment" class="commentbtn">Comment</button>
+</div>
+
+</form>  
+
+
+  <div class="comment-posted">
+  <i class="comment-author">@Adamz</i><br>
+  <p>Great one buddy thank you</p>
+</div><br>
 
  <div class="comment-posted">
   <i class="comment-author">@Adamz</i><br>
-  <p>Great one buddy thank you so much for sharing </p>
-</div><br><br>
-<div class="comment-posted">
-    <i class="comment-author">@Miller</i><br>
-    <p>This is awesome</p><br>
-  </div>
-  <br>
-  <div class="comment-posted">
-      <i class="comment-author">@Jeezy</i><br>
-      <p>I like it</p>
-    </div>
-    <br>    
-<input type="text"placeholder="write your comment..." name="comment" id="comment" required="">  
-</form>
+  <p>buddy thank you so much for sharing Great</p>
+</div><br>
+
+ <div class="comment-posted">
+  <i class="comment-author">@Adamz</i><br>
+  <p>Great one</p>
+</div><br>
+
+ <div class="comment-posted">
+  <i class="comment-author">@Adamz</i><br>
+  <p>Great one buddy thank you</p>
+</div><br>
+
+ <div class="comment-posted">
+  <i class="comment-author">@Adamz</i><br>
+  <p>buddy thank you so much for sharing Great</p>
+</div><br>
+
+ <div class="comment-posted">
+  <i class="comment-author">@Adamz</i><br>
+  <p>Great one</p>
+</div><br>
+
 </div>
+
+
 <?php } ?>
 
 </div>
 </div>   
- 
+
 
 <!--footer--> 
        
