@@ -71,8 +71,20 @@ $post_content = substr($row['post_content'],0,202);
 
      <section class="btncomment">
     <a href="comment-article.php?p_id=<?php echo $post_id; ?>">
+
+
+    <?php 
+      $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
+         $send_comment_query = mysqli_query($connection, $query);
+
+         $row = mysqli_fetch_array($send_comment_query);
+         $comment_id = $row['comment_id'];
+         $count_comments = mysqli_num_rows($send_comment_query);
+
+         echo "<img src='../assets/icons/comment.png' class='icon'/> <b> $count_comments</b>";
+         ?>
+    <!-- <img src="../assets/icons/comment.png" class="icon"/> <b>50</b> -->
     
-    <img src="../assets/icons/comment.png" class="icon"/> <b>50</b>
     </a>
     </section>
 
