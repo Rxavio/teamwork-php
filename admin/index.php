@@ -35,7 +35,12 @@
             <div class="card"> 
             <a href="comments.php">   
             <div class="card-circle">
-            <h4>245</h4> 
+            <?php
+            $query = "SELECT * FROM comments";
+             $select_all_comments = mysqli_query($connection,$query);
+             $comment_count = mysqli_num_rows( $select_all_comments);
+             echo"<h4>{$comment_count}</h4> "
+             ?>
             <p>COMMENTS</p>
            </div>
              </a>

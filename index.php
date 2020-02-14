@@ -8,12 +8,9 @@
             </h1> 
             <button class="banner-button"><a href="./pages/register.php">start now</a></button>
           </div>
-          
-      </div>
+          </div>
 
-
-
-      <div class="how-it-works">
+          <div class="how-it-works">
            <h2>HOW IT WORKS</h2>
           <div class="step">
           <h2 class="step-text"> Step one</h2><hr>
