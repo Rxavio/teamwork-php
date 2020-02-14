@@ -127,12 +127,6 @@ if(isset($_POST['update_profile'])) {
 
 </div>
 </div>
-
-
-</div>
-</div>
-</div>
-
 <!-- Footer-->
 
 

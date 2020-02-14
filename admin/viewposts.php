@@ -99,15 +99,7 @@
       </table>       
       </div>
 
- 
-  
-
-</div>
-</div>
-</div>
-
-
-<?php
+ <?php
 if(isset($_POST['delete'])){
 
 if(isset($_SESSION['user_role'])) {

@@ -59,10 +59,6 @@ $response="";
     </div>
 
 
-</div>
-</div>
-</div>
-
 
 <?php  include "includes/footer.php";?>	
 
@@ -90,15 +86,3 @@ $response="";
 
 
 
-
-
-      </div>
-    </div>
-    </div>
-
-
-
-
-
- </body>
-</html>

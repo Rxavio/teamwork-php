@@ -1,8 +1,35 @@
         <?php  include "includes/header.php";?>	
+           <div class="card"> 
+           <a href="viewposts.php">  
+            <div class="card-circle">
+            <h4>145</h4> 
+            <p>POSTS</p>
+           </div>
+          </a>
+          </div> 
 
-        <div class="info">	
-        
-        <script type="text/javascript">
+             <div class="card"> 
+              <a href="viewusers.php">   
+            <div class="card-circle">
+            
+            <h4>65</h4> 
+            <p>USERS</p>
+           </div>
+             </a>
+          </div> 
+
+            <div class="card"> 
+            <a href="comments.php">   
+            <div class="card-circle">
+            <h4>245</h4> 
+            <p>COMMENTS</p>
+           </div>
+             </a>
+          </div>  
+		</div>
+
+<div class="chart">
+   <script type="text/javascript">
 
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
@@ -31,12 +58,4 @@
   
     <div id="columnchart_material" style="width: 'auto'; height: 500px;"></div>
 
-</div>
-
-
-
-<!-- </div>
-</div> -->
-
-
-
+  </div>

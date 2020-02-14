@@ -24,6 +24,7 @@ if(!isset($_SESSION['user_role'])) {
 	<title>TEAMWORK</title>
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
 	<link rel="stylesheet" href="./css/sidemenu.css">
+  <link rel="stylesheet" href="./css/card.css">
   <link rel="stylesheet" href="./css/write-article.css">
   <link rel="stylesheet" href="./css/create.css">
   <link rel="stylesheet" href="./css/updatepost.css">

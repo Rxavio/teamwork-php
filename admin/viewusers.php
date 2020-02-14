@@ -75,11 +75,10 @@
       </table>       
 </div>
 
-</div>
-</div>
-</div>
 
 <!-- Footer-->
+
+
 <?php
 if(isset($_POST['delete'])){
 

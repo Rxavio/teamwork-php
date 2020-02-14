@@ -70,9 +70,5 @@ echo "<td> $comment_status</td>";
 </div>
 
 
-</div>
-</div>
-</div>
-
 
 

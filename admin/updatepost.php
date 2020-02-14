@@ -88,11 +88,6 @@ if(isset($_POST['update_post'])) {
 </div>
 </div>
 
-
-</div>
-</div>
-</div>
-
 <!-- Footer-->
 
 
