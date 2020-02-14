@@ -54,20 +54,40 @@ echo "<td> $comment_status</td>";
   echo "<td><a href='../pages/comment-article.php?p_id=$post_id'>$post_title</a></td>";
  }
 
-
-
-
  echo "<td><a href=''>Approve</a></td>";
  echo "<td><a href=''>Unapprove</a></td>";
- echo "<td><button><a href=''>Delete</a></button></td>";
+ ?>
+ 
+<form method="post">   
+ <input type="hidden"name="comment_id" value="<?php echo $comment_id ?>">
+   <?php   
+     echo '<td><button type="submit" name="delete">Delete</button></td>';
+     ?>  
+ </form>
 
+ <?php
  echo "</tr>";
-} 
-?>
+ }    
+ ?>
 </tbody>
 </table>
 
 </div>
+
+
+
+ <?php
+if(isset($_POST['delete'])){
+
+if(isset($_SESSION['user_role'])) {
+$the_comment_id = escape($_POST['comment_id']);
+$query = "DELETE FROM comments WHERE comment_id = {$the_comment_id} ";
+}
+$delete_query = mysqli_query($connection, $query);
+header("Location: ./comments.php");
+
+}
+?>
 
 
 
