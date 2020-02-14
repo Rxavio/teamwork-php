@@ -51,43 +51,59 @@
   echo"<td>$user_role</td>";
   echo "<td><img src='../pages/images/$user_profile' alt='image' width='70' height='35'> </td>";
   echo"<td>$user_created</td>";
-  echo "<td> <a href=''>admin</a></td>";
-  echo "<td><a href=''> user</a></td>";
+  ?>
+  <form method="post">   
+  <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
+  <?php   
+    echo '<td><button type="submit" name="change_to_admin">Admin</button></td>';
+  ?>
 
+  <form method="post">   
+  <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
+  <?php   
+    echo '<td><button type="submit" name="change_to_user">User</button></td>';
+  ?>
+  <?php
   //echo "<td><button><a href='profile.php'>Edit</a></button></td>";
-
   echo "<td><button><a href='updateuser.php?p_id={$user_id}'>Edit</a></button></td>";
-
   ?> 
-
 <form method="post">   
 <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
-  <?php   
-    echo '<td><button type="submit" name="delete">Delete</button></td>';
-  ?>     
+<?php   
+echo '<td><button type="submit" name="delete">Delete</button></td>';
+?>     
 </form>
 <?php
 
-      echo "</tr>";
+  echo "</tr>";
       }    
       ?>               
       </tbody>
       </table>       
 </div>
-
-
 <!-- Footer-->
-
-
 <?php
 if(isset($_POST['delete'])){
 
 if(isset($_SESSION['user_role'])) {
+
 $the_user_id = escape($_POST['user_id']);
 $query = "DELETE FROM users WHERE user_id = {$the_user_id} ";
 }
 $delete_query = mysqli_query($connection, $query);
 header("Location: ./viewusers.php");
 }
+if(isset($_POST['change_to_admin'])) {  
+  $the_user_id = escape($_POST['user_id']);
+  $query = "UPDATE users SET user_role = 'admin' WHERE user_id = $the_user_id ";
+  $change_to_admin_query = mysqli_query($connection, $query);
+  header("Location: viewusers.php"); 
+}
+if(isset($_POST['change_to_user'])){
+  $the_user_id =escape($_POST['user_id']);
+  $query = "UPDATE users SET user_role = 'user' WHERE user_id = $the_user_id ";
+  $change_to_sub_query = mysqli_query($connection, $query);
+  header("Location: viewusers.php");
 
+}
 ?>
