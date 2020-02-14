@@ -1,0 +1,60 @@
+ 
+   @media only screen and (min-width: 300px) and (max-width: 1200px){ 
+  .info-card .btnlike{
+    height: 30px;
+    margin-top: 0;
+    margin-right: 10px;
+  }
+    
+  .btnlike a{
+    width:10px;
+    height: auto;
+    margin-top: 5px;
+  }
+  
+  .btnlike a b{
+    margin-left: 40px;
+    height: auto;
+   margin-top: -18px;
+     
+  }
+  
+  .info-card .more{
+    padding: 30px;
+    margin: auto;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    
+  } 
+  .info-card .more .author{
+      margin-top: -20px;
+  }
+ 
+  
+}
+
+@media only screen and (max-width: 355px){
+
+    .info-card .btnlike{
+        width: 100%;
+        height: 25px;
+        margin-top: 3px;
+        margin-right: 10px;
+      }
+        
+      .btnlike a{
+        width:10px;
+        height: auto;
+        margin-top: 5px;
+      margin-left: 25%;
+      }
+      
+      .btnlike a b{
+        margin-left: 40px;
+        height: auto;
+       margin-top: -18px;
+         
+      }
+
+}

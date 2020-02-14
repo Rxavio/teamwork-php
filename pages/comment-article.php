@@ -43,9 +43,8 @@
     </a>
     </section>
 
-     <section class="btncomment">
+    <section class="btnlike">
     <a href="#">
-
     <?php 
       $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
          $send_comment_query = mysqli_query($connection, $query);
@@ -55,8 +54,7 @@
          echo "<img src='../assets/icons/comment.png' class='icon'/> <b> $count_comments</b>";
          ?>
     </a>
-    </section>
-
+    </section> 
   </div>
 
 </div>
@@ -81,15 +79,17 @@ if(isset($_POST['create_comment'])) {
         }
 
     }
+    header("Location:index.php");
 
 }
+
 
 ?> 
 
 <div class="comment">
 
 <form action="" method="post" enctype="multipart/form-data"autocomplete="on">
-<h4>Leave a Comment:</h4>
+<h4>Comment:</h4>
 <div class="addcomment">
    <input type="text" name="comment_author" placeholder="Enter your name ..."> 
   <input type="email" name="comment_email" placeholder="Enter Email ...">

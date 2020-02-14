@@ -50,37 +50,7 @@
     outline: 0;
     border-radius: 10px;
    
-  }
-  
-  .info-card .btncomment{
-    background: var(--mainGrey);
-    width: 100px;
-    height: 30px;
-    padding: 10px;
-    color: var(--mainWhite);
-    letter-spacing: var(--mainSpacing); 
-    border-radius: 20px;
-    margin-top: -25px;
-    margin-left: 5px;
-    float: left;
-  }
-  .btncomment a{
-    margin-left: -15px;
-    margin-top: 10px;
-    float: left;
-  }
-  
-  .btncomment a b{
-    margin-left: 4px;
-    margin-top: -10px;
-    float: right;
-    color: var(--primaryColor);
-    font-size: 14px;
-  }
-  .btncomment a b:hover{
-     color: red;
-  }
-  
+  } 
   .info-card .btnlike{
     background: var(--mainGrey);
     width: 100px;
@@ -214,6 +184,10 @@
      margin-top: -8px;
      margin-bottom: auto;
     }
+
+   
+   
+
   
   }
   

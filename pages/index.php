@@ -63,16 +63,16 @@ $post_content = substr($row['post_content'],0,202);
    
    <div class="more">
     <h5 class="author">By <?php echo $post_author ?> <i class="date"><?php echo $post_date ?></i></h5>
+
      <section class="btnlike">
     <a href="">
-    <img src="../assets/fonts/thumbs-up.svg" class="icon"/> <b>120</b>
+    <img src="../assets/fonts/thumbs-up.svg" class="icon"/><b>120</b>
     </a>
     </section>
 
-     <section class="btncomment">
+    
+    <section class="btnlike">
     <a href="comment-article.php?p_id=<?php echo $post_id; ?>">
-
-
     <?php 
       $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
          $send_comment_query = mysqli_query($connection, $query);
@@ -81,14 +81,12 @@ $post_content = substr($row['post_content'],0,202);
          $comment_id = $row['comment_id'];
          $count_comments = mysqli_num_rows($send_comment_query);
 
-         echo "<img src='../assets/icons/comment.png' class='icon'/> <b> $count_comments</b>";
-         ?>
-    <!-- <img src="../assets/icons/comment.png" class="icon"/> <b>50</b> -->
-    
+         echo "<img src='../assets/icons/comment.png' class='icon'/><b>$count_comments</b>";
+         ?> 
     </a>
     </section>
 
-  </div>
+      </div>
         
 </div>
 
