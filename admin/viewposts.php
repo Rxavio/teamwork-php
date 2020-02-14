@@ -15,7 +15,7 @@
             <th>Status</th>
             <th>Tags</th>
             <th>Comments</th>
-            <th>Visitors</th>
+            <th>Views</th>
             <th>Preview</th>
             <th>Edit</th>
             <th>Delete</th>
@@ -40,8 +40,7 @@
   // $post_status = $row['post_status'];
   $post_content = substr($row['post_content'],0,20);
   // $post_tags = $row['post_tags'];
-
-  //$post_comment_count = 420;
+  $post_views_count = $row['post_views_count'];
 
   echo "<tr>";
   ?>
@@ -62,11 +61,9 @@
 
           echo"<td>published</td>";
           echo "<td>coding</td>";
+          
 
          // echo "<td><a href=''>30</a></td>";
-
-         //echo "<td> $post_comment_count</td>";
-
          $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
          $send_comment_query = mysqli_query($connection, $query);
 
@@ -75,7 +72,8 @@
          $count_comments = mysqli_num_rows($send_comment_query);
          echo "<td><a href=''>$count_comments</a></td>";
 
-          echo"<td><a href=''>95</a></td>";
+          //echo"<td><a href=''>95</a></td>";
+          echo "<td><a href=''>{$post_views_count}</a></td>";
 
           echo "<td><a href='../pages/comment-article.php?p_id={$post_id}'>View Post</a></td>";
           
