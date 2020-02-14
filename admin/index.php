@@ -4,7 +4,14 @@
            <div class="card"> 
            <a href="viewposts.php">  
             <div class="card-circle">
-            <h4>145</h4> 
+
+            <?php
+            $query = "SELECT * FROM posts";
+             $select_all_posts = mysqli_query($connection,$query);
+             $post_count = mysqli_num_rows( $select_all_posts);
+             echo  "<h4>{$post_count}</h4> "
+             ?>
+
             <p>POSTS</p>
            </div>
           </a>
