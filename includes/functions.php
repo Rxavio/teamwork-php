@@ -13,5 +13,4 @@ function escape($string) {
           }
     }
 
-
-?>
+  ?>

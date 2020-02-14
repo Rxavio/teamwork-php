@@ -1,4 +1,6 @@
         <?php  include "includes/header.php";?>	
+        <?php  include "../includes/functions.php"; ?>
+
            <div class="card"> 
            <a href="viewposts.php">  
             <div class="card-circle">
@@ -11,8 +13,13 @@
              <div class="card"> 
               <a href="viewusers.php">   
             <div class="card-circle">
-            
-            <h4>65</h4> 
+            <?php
+            $query = "SELECT * FROM users";
+             $select_all_users = mysqli_query($connection,$query);
+             $user_count = mysqli_num_rows( $select_all_users);
+             echo  "<h4>{$user_count}</h4> "
+             ?>
+          
             <p>USERS</p>
            </div>
              </a>
