@@ -38,7 +38,7 @@
         die("QUERY FAILED".mysqli_error($connection));
       }
 
-      $response="User Succesfully Added";
+      $response="User Auccesfully Added";
 
    }
 ?>
@@ -49,7 +49,7 @@
 
  <div class="create-page">
  <?php
-  echo $response;
+  echo"<b class='response'>$response</b>";
   ?>
 <div class="create-form">
 <form action="" method="post" enctype="multipart/form-data"autocomplete="on">

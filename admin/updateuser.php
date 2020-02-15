@@ -83,14 +83,14 @@ if(isset($_POST['update_profile'])) {
         }
    
         confirmQuery($update_user);     
-      $response="Profile Updated well";
+      $response="Profile updated well";
 
 }
 }
 ?>
  <div class="create-page">
  <?php
-  echo $response;
+  echo"<b class='response'>$response</b>";
   ?>
 <div class="create-form">
 <h1 class="page-header">                          

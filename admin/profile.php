@@ -89,14 +89,14 @@ if(isset($_POST['update_profile'])) {
         // if(!$update_user){
         //   die("QUERY FAILED".mysqli_error($connection));
         // }      
-      $response="Profile Updated well";
+      $response="Profile updated well";
 
 }
 }
 ?>
  <div class="create-page">
  <?php
-  echo $response;
+  echo"<b class='response'>$response</b>";
   ?>
 <div class="create-form">
 <h1 class="page-header">                          

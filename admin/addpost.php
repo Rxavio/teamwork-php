@@ -4,8 +4,6 @@
 <?php
 $msg="";
 $response="";
- 
-
  if(isset($_POST['create_post'])) {
   $post_author = escape($_POST['post_author']);
   $post_title = escape($_POST['post_title']);
@@ -29,17 +27,15 @@ $response="";
     
   confirmQuery( $create_post_query);
 
-  $response="post Succesfully Added";
+  $response="Post Succesfully Added";
 
  }
 
   ?>
-
-
-     <div class="create-article-page">
-      <?php
-      echo $response;
-      ?>
+ <div class="create-page">
+     <?php
+   echo"<b class='response'>$response</b>";
+   ?>
     <div class="article-form">
     <form action="" method="post" enctype="multipart/form-data"autocomplete="on">
         <h3>Add an article</h3><br>

@@ -24,17 +24,18 @@ if(!isset($_SESSION['user_role'])) {
 	<title>TEAMWORK</title>
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
 	<link rel="stylesheet" href="./css/sidemenu.css">
-  <link rel="stylesheet" href="./css/card.css">
+  <link rel="stylesheet" href="./css/cards.css">
   <link rel="stylesheet" href="./css/write-article.css">
   <link rel="stylesheet" href="./css/create.css">
   <link rel="stylesheet" href="./css/updatepost.css">
   <link rel="stylesheet" href="./css/profile.css">
-  <link rel="stylesheet" href="./css/admin.css">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/responsive.css">
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
+  <script src="ckeditor/ckeditor.js"></script>
   
 </head>
 <body>
