@@ -76,7 +76,9 @@ $post_content = substr($row['post_content'],0,202);
     <section class="btnlike">
     <a href="comment-article.php?p_id=<?php echo $post_id; ?>">
     <?php 
-      $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
+      // $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
+      $query = "SELECT * FROM comments WHERE comment_post_id = $post_id  ";
+      $query .= "AND comment_status = 'approve' ";
          $send_comment_query = mysqli_query($connection, $query);
 
          $row = mysqli_fetch_array($send_comment_query);

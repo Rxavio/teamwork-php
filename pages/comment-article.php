@@ -49,7 +49,9 @@
     <section class="btnlike">
     <a href="#">
     <?php 
-      $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
+      // $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
+    $query = "SELECT * FROM comments WHERE comment_post_id = $post_id  ";
+    $query .= "AND comment_status = 'approve' ";
          $send_comment_query = mysqli_query($connection, $query);
          $row = mysqli_fetch_array($send_comment_query);
          $comment_id = $row['comment_id'];
@@ -72,7 +74,7 @@ if(isset($_POST['create_comment'])) {
     if (!empty($comment_author) && !empty($comment_email) && !empty($comment_content)) {
 
         $query = "INSERT INTO comments (comment_post_id,comment_author, comment_email, comment_content, comment_status,comment_date)";
-        $query .= "VALUES ($the_post_id ,'{$comment_author}','{$comment_email}','{$comment_content }', 'approved',now())";
+        $query .= "VALUES ($the_post_id ,'{$comment_author}','{$comment_email}','{$comment_content }', 'approve',now())";
 
         $create_comment_query = mysqli_query($connection, $query);
 
@@ -106,7 +108,7 @@ if(isset($_POST['create_comment'])) {
 <?php 
 
 $query = "SELECT * FROM comments WHERE comment_post_id = {$the_post_id} ";
-$query .= "AND comment_status = 'approved' ";
+$query .= "AND comment_status = 'approve' ";
 $query .= "ORDER BY comment_id DESC ";
 $select_comment_query = mysqli_query($connection, $query);
 if(!$select_comment_query) {

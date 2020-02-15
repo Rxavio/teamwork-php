@@ -53,11 +53,19 @@ echo "<td> $comment_status</td>";
  $post_title = $row['post_title']; 
   echo "<td><a href='../pages/comment-article.php?p_id=$post_id'>$post_title</a></td>";
  }
-
- echo "<td><a href=''>Approve</a></td>";
- echo "<td><a href=''>Unapprove</a></td>";
  ?>
- 
+  <form method="post">   
+  <input type="hidden" name="comment_id" value="<?php echo $comment_id ?>">
+  <?php   
+    echo '<td><button type="submit" name="approve">Approve</button></td>';
+  ?>
+
+  <form method="post">   
+  <input type="hidden" name="comment_id" value="<?php echo $comment_id ?>">
+  <?php   
+    echo '<td><button type="submit" name="unapprove">Unapprove</button></td>';
+  ?>
+
 <form method="post">   
  <input type="hidden"name="comment_id" value="<?php echo $comment_id ?>">
    <?php   
@@ -85,6 +93,20 @@ $query = "DELETE FROM comments WHERE comment_id = {$the_comment_id} ";
 }
 $delete_query = mysqli_query($connection, $query);
 header("Location: ./comments.php");
+}
+
+
+if(isset($_POST['approve'])) {  
+  $the_comment_id = escape($_POST['comment_id']);
+  $query = "UPDATE comments SET comment_status = 'approve' WHERE comment_id = $the_comment_id ";
+  $approve_query = mysqli_query($connection, $query);
+  header("Location: comments.php"); 
+}
+if(isset($_POST['unapprove'])){
+  $the_comment_id =escape($_POST['comment_id']);
+  $query = "UPDATE comments SET comment_status = 'unapprove' WHERE comment_id = $the_comment_id ";
+  $unapprove_query = mysqli_query($connection, $query);
+  header("Location: comments.php");
 
 }
 ?>
