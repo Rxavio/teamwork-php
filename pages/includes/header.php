@@ -13,6 +13,7 @@
   <link href='https://fonts.googleapis.com/css?family=Crimson Text' rel='stylesheet'>
    <link rel="stylesheet" href="../css/nav.css"/>
   <link rel="stylesheet" href="./css/style.css"/>
+  <link rel="stylesheet" href="./css/pagination.css"/>
   <link rel="stylesheet" href="./css/respo.css"/>
   <link rel="stylesheet" href="./css/comment.css"/>
   <!-- <link rel="stylesheet"href="./css/view-articles.css"/>  -->

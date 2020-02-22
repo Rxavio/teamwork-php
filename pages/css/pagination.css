@@ -1,0 +1,27 @@
+.pagination {
+    display: inline-block;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    font-weight: bold;
+    padding: 8px 16px;
+    text-decoration: none;
+      
+}
+
+.pagination a:active {
+    color: var(--primaryColor);
+}
+
+.pagination #first {
+    background-color: var(--primaryColor);
+    color: white;
+    border-radius: 50px;
+}

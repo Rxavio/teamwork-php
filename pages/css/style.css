@@ -143,6 +143,16 @@
   .info-card img .icon:hover{
     opacity: 1;
   }
+
+  .pagination {
+    display: inline-block;
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
   @media only screen and (min-width: 300px) and (max-width: 1200px){
     .shared-article-page{
       width:100%;

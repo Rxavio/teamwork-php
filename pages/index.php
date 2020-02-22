@@ -3,6 +3,7 @@
 <!-- header-->
 
 <div class="shared-article-page">
+
 <div class="shared-form">
 
 <h3>Shared Articles</h3> 
@@ -97,9 +98,26 @@ $post_content = substr($row['post_content'],0,202);
 <?php } ?>
 
     </div>
-    </div>
 
-   
+ <!--pagination--> 
+ <div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#" class="active" id="first">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+   <a href="#">7</a>
+  <a href="#">8</a>
+   <a href="#">9</a>
+  <a href="#">10</a>
+  <a href="#">&raquo;</a>
+   </div>
+
+
+</div>
+
  <!--footer--> 
 
  <?php  include "includes/footer.php"; ?>
