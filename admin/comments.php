@@ -37,7 +37,6 @@ $comment_content = substr($row['comment_content'],0,20);
 
 echo "<tr>";
 echo "<td scope='row' data-label='comment id'> $comment_id</td>";
-// echo "<td> $comment_post_id</td>";
 echo "<td data-label='by'> $comment_author</td>";
 echo "<td data-label='email'> $comment_email</td>";
 echo "<td data-label='comment'> $comment_content</td>";
@@ -93,7 +92,7 @@ $the_comment_id = escape($_POST['comment_id']);
 $query = "DELETE FROM comments WHERE comment_id = {$the_comment_id} ";
 }
 $delete_query = mysqli_query($connection, $query);
-header("Location: ./comments.php");
+header("Location: ./comments");
 }
 
 
@@ -101,13 +100,13 @@ if(isset($_POST['approve'])) {
   $the_comment_id = escape($_POST['comment_id']);
   $query = "UPDATE comments SET comment_status = 'approve' WHERE comment_id = $the_comment_id ";
   $approve_query = mysqli_query($connection, $query);
-  header("Location: comments.php"); 
+  header("Location: ./comments"); 
 }
 if(isset($_POST['unapprove'])){
   $the_comment_id =escape($_POST['comment_id']);
   $query = "UPDATE comments SET comment_status = 'unapprove' WHERE comment_id = $the_comment_id ";
   $unapprove_query = mysqli_query($connection, $query);
-  header("Location: comments.php");
+  header("Location: ./comments");
 
 }
 ?>

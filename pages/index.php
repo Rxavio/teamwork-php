@@ -48,6 +48,7 @@ $post_content = substr($row['post_content'],0,202);
     <h4><?php echo $post_title ?></h4>
     <hr>
     <br>
+    <!-- <a href="comment-article/<?php echo $post_id; ?>"> -->
     <a href="comment-article.php?p_id=<?php echo $post_id; ?>">
     <img src="./images/<?php echo $post_image;?>">
    </a>

@@ -34,7 +34,6 @@
   $post_id = $row['post_id'];
   $post_author = $row['post_author'];
    $post_title = substr($row['post_title'],0,20);
-  // $post_category_id = $row['post_category_id'];
   $post_date = $row['post_date'];
   $post_image = $row['post_image'];
   // $post_status = $row['post_status'];
@@ -104,7 +103,7 @@ $the_post_id = escape($_POST['post_id']);
 $query = "DELETE FROM posts WHERE post_id = {$the_post_id} ";
 }
 $delete_query = mysqli_query($connection, $query);
-header("Location: ./viewposts.php");
+header("Location: ./viewposts");
 
 }
 ?>

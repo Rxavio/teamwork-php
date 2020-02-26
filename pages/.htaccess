@@ -1,2 +1,3 @@
 RewriteEngine on
 RewriteRule ^(index|login|register)$ $1.php [NC,L]
+RewriteRule ^comment-article/(\d+)$ comment-article.php?p_id=$1 [NC,L]

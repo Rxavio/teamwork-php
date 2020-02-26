@@ -2,7 +2,7 @@
         <?php  include "../includes/functions.php"; ?>
 
            <div class="card"> 
-           <a href="viewposts.php">  
+           <a href="viewposts">  
             <div class="card-circle">
 
             <?php
@@ -18,7 +18,7 @@
           </div> 
 
              <div class="card"> 
-              <a href="viewusers.php">   
+              <a href="viewusers">   
             <div class="card-circle">
             <?php
             $query = "SELECT * FROM users";
@@ -33,7 +33,7 @@
           </div> 
 
             <div class="card"> 
-            <a href="comments.php">   
+            <a href="comments">   
             <div class="card-circle">
             <?php
             $query = "SELECT * FROM comments";

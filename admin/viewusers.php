@@ -91,19 +91,19 @@ $the_user_id = escape($_POST['user_id']);
 $query = "DELETE FROM users WHERE user_id = {$the_user_id} ";
 }
 $delete_query = mysqli_query($connection, $query);
-header("Location: ./viewusers.php");
+header("Location: ./viewusers");
 }
 if(isset($_POST['change_to_admin'])) {  
   $the_user_id = escape($_POST['user_id']);
   $query = "UPDATE users SET user_role = 'admin' WHERE user_id = $the_user_id ";
   $change_to_admin_query = mysqli_query($connection, $query);
-  header("Location: viewusers.php"); 
+  header("Location: viewusers"); 
 }
 if(isset($_POST['change_to_user'])){
   $the_user_id =escape($_POST['user_id']);
   $query = "UPDATE users SET user_role = 'user' WHERE user_id = $the_user_id ";
   $change_to_sub_query = mysqli_query($connection, $query);
-  header("Location: viewusers.php");
+  header("Location: viewusers");
 
 }
 ?>
