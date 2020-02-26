@@ -5,14 +5,14 @@
 
 if(!isset($_SESSION['user_role'])) {
 
-  header("Location:../pages/login.php");
+  header("Location:../pages/login");
 
     }
 
  if(isset($_SESSION['user_role'])) {
 
      if($_SESSION['user_role']!=='admin'){
-        header("Location:../pages/index.php");
+        header("Location:../pages/index");
     }	
  } 
 ?>
@@ -46,7 +46,7 @@ if(!isset($_SESSION['user_role'])) {
                 <img src="./assets/pi.jpg">
                       <ul  id="dropdown">
                       <li><a href="">Xavio</a></li>
-                      <li><a href="./profile.php">Profile</a></li>
+                      <li><a href="./profile">Profile</a></li>
                       <li><a href="../pages/logout.php">Log Out</a></li>
                     </ul>
                   </li>
@@ -57,13 +57,13 @@ if(!isset($_SESSION['user_role'])) {
             
                   <nav>
                     <ul>
-        <li><a href="index.php"><i class="fas fa-home"></i> Dashboard</a></li>
-            <li><a href="viewposts.php"><i class="fas fa-address-card"></i> View Posts</a></li>
-            <li><a href="addpost.php"><i class="fas fa-address-card"></i> Add post</a></li>
-            <li><a href="comments.php"><i class="fas fa-project-diagram"></i> Comments</a></li>
-            <li><a href="viewusers.php"><i class="fas fa-blog"></i> View Users</a></li>
-            <li><a href="adduser.php"><i class="fas fa-blog"></i> Add User</a></li>
-            <li><a href="profile.php"><i class="fas fa-user"></i> Profile</a></li>            
+        <li><a href="index"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="viewposts"><i class="fas fa-address-card"></i> View Posts</a></li>
+            <li><a href="addpost"><i class="fas fa-address-card"></i> Add post</a></li>
+            <li><a href="comments"><i class="fas fa-project-diagram"></i> Comments</a></li>
+            <li><a href="viewusers"><i class="fas fa-blog"></i> View Users</a></li>
+            <li><a href="adduser"><i class="fas fa-blog"></i> Add User</a></li>
+            <li><a href="profile"><i class="fas fa-user"></i> Profile</a></li>            
             </ul>
                   </nav>
             

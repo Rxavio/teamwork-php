@@ -44,7 +44,7 @@ if(!isset($_SESSION['user_role'])) {
   <a href="../index.php"> <img src="../assets/images/team.png"></a>
     </div>
 <ul class="nav-links">
-  <li><a href="./index.php">All Posts</a></li>
+  <li><a href="./index">All Posts</a></li>
   <li><a href="../admin">Admin Area</a></li>
 
   <li><a href="./logout.php">Logout</a><li>

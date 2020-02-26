@@ -27,7 +27,7 @@
         </div>
 
         <ul class="nav-links">
-         <li><a href="./pages/register.php">Sign Up</a><li>
-          <li><a href="./pages/login.php">Login</a><li>
+         <li><a href="./pages/register">Sign Up</a><li>
+          <li><a href="./pages/login">Login</a><li>
         </ul>
       </nav>	

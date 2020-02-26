@@ -26,7 +26,6 @@ if(isset($_POST['login'])) {
     $db_user_password=$row['user_password'];
  }
 
-//  if($email === $db_user_email && $password === $db_user_password){
 if(password_verify($password,$db_user_password)){
 $_SESSION['username']=$db_username;
 $_SESSION['email']=$db_user_email;
@@ -38,7 +37,7 @@ header("Location: ../admin");
 }
 
 else{
-   header("Location: ./login.php");
+   header("Location: ./login");
 }
 }
 ?>
@@ -69,7 +68,7 @@ else{
                   <div class="line"></div>
                 </div>
                 <div class="logo">
-                  <a href="../index.php"> <img src="../assets/images/team.png"></a>
+                  <a href="../index"> <img src="../assets/images/team.png"></a>
                    </div>
                 <ul class="nav-links">
                   <!-- <li><a href="./login.php">Logout</a><li>  -->
@@ -80,15 +79,13 @@ else{
 <div class="login-page">
 
 	<div class="login-form">
-
-	<!-- <form class="login-action" action="./view-articles.php" autocomplete="off">	 -->
   <form action="" method="post" enctype="multipart/form-data">
 
 	<img src="../assets/icons/useravt.JPG">
 	<h3>Enter your credentials to log in</h3><br>
 	<input type="text"name="username"placeholder="Enter your Username" required="">
 	<input type="password"name="password"placeholder="Enter your Password" required="" minlength="6">
-	<p>Not yet Registered? <a href="./register.php"> &nbsp;&nbsp;&nbsp;<u>Sign Up</u></a></p>
+	<p>Not yet Registered? <a href="./register"> &nbsp;&nbsp;&nbsp;<u>Sign Up</u></a></p>
 
   <button type="submit" name="login" >Login</button>
 	</form>

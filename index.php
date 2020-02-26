@@ -6,7 +6,7 @@
            <h1 class="banner-text"><span>Teamwork</span> is an ​internal social network for organizations’ employees.The goal of this
             application is to facilitate more interaction between colleagues and facilitate team bonding.
             </h1> 
-            <button class="banner-button"><a href="./pages/register.php">start now</a></button>
+            <button class="banner-button"><a href="./pages/register">start now</a></button>
           </div>
           </div>
 

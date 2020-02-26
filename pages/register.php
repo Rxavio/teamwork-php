@@ -25,7 +25,7 @@
                   <div class="line"></div>
                 </div>
                 <div class="logo">
-                  <a href="../index.php"> <img src="../assets/images/team.png"></a>
+                  <a href="../index"> <img src="../assets/images/team.png"></a>
                    </div>
                 <ul class="nav-links">
                   <!-- <li><a href="./login.php">Logout</a><li>  -->
@@ -65,7 +65,6 @@
 <!--header-->
 <div class="create-page">
 <div class="create-form">
-<!-- <form class="login-action" action="./login.php" autocomplete="on"> -->
 
 <form action="" method="post" enctype="multipart/form-data">  
 
@@ -82,7 +81,7 @@
   <option value="user">User</option>
 </select>   
 <input type="password" placeholder="password" name="user_password"required="" minlength="6">
-<p>Already Registered?<a href="./login.php">&nbsp;&nbsp;&nbsp;<u>Login</u></a></p>
+<p>Already Registered?<a href="./login">&nbsp;&nbsp;&nbsp;<u>Login</u></a></p>
 <button type="submit" name="sign-up" >sign up</button>
 </form>
 

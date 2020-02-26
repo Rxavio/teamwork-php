@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^(index|profile|addpost|adduser|comments|viewposts|viewusers)$ $1.php [NC,L]
