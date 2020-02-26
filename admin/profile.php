@@ -122,7 +122,7 @@ if(isset($_POST['update_profile'])) {
 
  <label class="lblphoto" for="photo">Upload Profile</label>
     <input  type="file" name="image">
-      <img width="100" src="../pages/images/<?php echo $user_profile; ?>" alt=""></br></br></br></br>
+      <img width="100" src="../pages/images/<?php echo $user_profile; ?>" alt=""></br><br></br><br>
 
  <label class="lblphoto" for="photo">Password</label>
 <input type="password" value="<?php //echo $user_password; ?>"name="user_password"required="">
@@ -133,10 +133,6 @@ if(isset($_POST['update_profile'])) {
 
 </div>
 </div>
-
-
-
-<!-- Footer-->
 <?php  include "includes/footer.php";?>	
 
 

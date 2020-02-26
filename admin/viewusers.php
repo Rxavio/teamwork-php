@@ -43,14 +43,14 @@
   ?>
 
 <?php
-  echo"<td>$user_id</td>";
-  echo"<td>$user_firstname</td>";
-  echo"<td>$user_lastname</td>";
-  echo"<td>$username</td>";
-  echo"<td>$user_email</td>";
-  echo"<td>$user_role</td>";
-  echo "<td><img src='../pages/images/$user_profile' alt='image' width='70' height='35'> </td>";
-  echo"<td>$user_created</td>";
+  echo"<td data-label='user id'>$user_id</td>";
+  echo"<td data-label='firstname'>$user_firstname</td>";
+  echo"<td data-label='lastname'>$user_lastname</td>";
+  echo"<td data-label='username'>$username</td>";
+  echo"<td data-label='email'>$user_email</td>";
+  echo"<td data-label='role'>$user_role</td>";
+  echo "<td data-label='profile'><img src='../pages/images/$user_profile' alt='image' width='70' height='35'> </td>";
+  echo"<td data-label='created'>$user_created</td>";
   ?>
   <form method="post">   
   <input type="hidden" name="user_id" value="<?php echo $user_id ?>">
@@ -81,7 +81,7 @@ echo '<td><button type="submit" name="delete">Delete</button></td>';
       </tbody>
       </table>       
 </div>
-<!-- Footer-->
+<?php  include "includes/footer.php";?>	
 <?php
 if(isset($_POST['delete'])){
 

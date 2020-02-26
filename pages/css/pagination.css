@@ -15,7 +15,9 @@
     text-decoration: none;
       
 }
-
+.pagination a:hover {
+    color: var(--primaryColor); 
+}
 .pagination a:active {
     color: var(--primaryColor);
 }

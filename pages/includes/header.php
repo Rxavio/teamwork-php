@@ -1,7 +1,14 @@
 <?php ob_start(); ?>
 <?php include "../includes/dbconnection.php"; ?>
 <?php session_start(); ?>
+<?php 
 
+if(!isset($_SESSION['user_role'])) {
+
+    header("Location:../pages/login.php");
+
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +23,6 @@
   <link rel="stylesheet" href="./css/pagination.css"/>
   <link rel="stylesheet" href="./css/respo.css"/>
   <link rel="stylesheet" href="./css/comment.css"/>
-  <!-- <link rel="stylesheet"href="./css/view-articles.css"/>  -->
-	<!-- <link rel="stylesheet" href="../css/comment.css"/> -->
   <link rel="stylesheet" href="../css/edit-article.css"/>
   <link rel="stylesheet" href="../css/reason.css"/>
   <link rel="stylesheet" href="../css/reasoncomment.css"/>

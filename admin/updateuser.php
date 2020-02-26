@@ -128,6 +128,7 @@ if(isset($_POST['update_profile'])) {
 </div>
 </div>
 <!-- Footer-->
+<?php  include "includes/footer.php";?>	
 
 
 

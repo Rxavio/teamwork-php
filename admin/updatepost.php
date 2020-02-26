@@ -77,12 +77,14 @@ if(isset($_POST['update_post'])) {
 <input type="text" name="post_author"required="" value="<?php echo $post_author; ?>">
 
  <label class="lblphoto" for="photo">Upload Profile</label>
-   <input type="file" name="image" id="image">
+   <input type="file" name="image" id="image"><br>
    <img width="100" src="../pages/images/<?php echo $post_image; ?>" alt="">
-   <br> <br> <br> <br> 
+   <br> <br> <br>    <br>  
+   
+ 
 
  <textarea class="ckeditor" name="post_content" rows="10" cols="50"  required="" minlength="3">
-   <?php echo $post_content; ?> </textarea>
+   <?php echo $post_content; ?> </textarea><br>
 <button type="submit" name="update_post" >Update post</button>
 </form>
 
@@ -90,6 +92,7 @@ if(isset($_POST['update_post'])) {
 </div>
 
 <!-- Footer-->
+<?php  include "includes/footer.php";?>	
 
 
 

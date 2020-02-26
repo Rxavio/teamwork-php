@@ -1,0 +1,183 @@
+/* 
+  @media only screen and (min-width: 300px) and (max-width: 760px){
+    .create-page{
+    width:100%;
+    height: auto;
+    margin-bottom: 0px;
+    padding: 10px;
+    margin-top: 15px;
+    z-index: 2;
+   left: 0;
+   
+    }
+    .create-form{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px
+    }
+   
+    .create-form img{
+        height: 45px;
+        width: 45px;
+        
+      }
+      .create-form input{
+        margin: 0 0 10px;
+        padding: 6px;  
+    }
+    .create-form select{
+       margin: 0 0 10px;
+      padding: 6px; 
+    }
+    .create-form button{
+        width:100%;
+        margin: auto;
+      }
+  
+
+  .navbar{
+    width: 100%;
+    position: relative;
+  }
+  } */
+
+  :root {
+    --primaryColor: rgb(40, 106, 247);
+    --mainWhite: #ffffff;
+    --mainGrey: #ececec;
+    --mainBlack: #000000;
+    --color-primary: #263238;
+    --color-secondary: darkgrey;
+    --color-second: #5EC6FF;
+    --mainSpacing: 0.1rem;
+    --mainTransition: all .5s ease;
+    }
+  
+  .create-page{
+    width: 85%;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+  .create-form{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;	
+    float:left;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+  }
+  .create-form h3{
+      font-size: 20px;
+  }
+  .create-form img{
+    float: left;
+}
+  .create-form input{
+    background: var(--mainWhite);
+    width: 100%;
+    margin: 0 0 10px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    outline: 0;
+    border-radius: 10px; 
+  }
+  .create-form select{
+    background: var(--mainWhite);
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    outline: 0;
+    border-radius: 10px;
+    
+  }
+  .create-form textarea{
+    background: var(--mainWhite);
+    width: 100%;
+    height: 200px;
+    margin: 0 0 10px;
+    padding: 12px;
+    box-sizing: border-box;
+     border: 1px solid #e1e1e1;
+    outline: 0;
+    border-radius: 10px;
+   
+  }
+  .create-form button{
+    text-transform: uppercase;
+    outline: 0;
+    background: #4b4276;
+    width: 20%;
+    padding: 10px;
+    color: var(--mainWhite);
+    cursor: pointer;
+    border-radius: 10px;
+    float: right;
+    border: 1px solid #5EC6FF;
+    margin-right: 40%;
+  }
+  .create-form button:hover{
+    border: 1px solid #fff;
+  }
+  .create-form .lblphoto{
+    float: left;
+    margin-left:  10px;
+    font-size: 14px;
+  }
+  .create-page .response{
+    background: yellowgreen;
+    font-size: 20px;  
+   margin-left: 10px;
+ }
+ 
+  
+  @media only screen and (min-width: 300px) and (max-width: 600px){
+    .create-page{
+      width:100%;
+      margin-bottom: 0px;
+      padding: 10px;
+      margin-top: 5px;
+    }
+    .create-form{
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 5px; 
+    }
+    .create-form button{
+      width:100%;
+      margin: auto;
+           
+    }
+  
+  }
+  
+  @media only screen and (min-width: 300px) and (max-width: 600px){
+    .create-article-page{
+      width:100%;
+      margin-bottom: 0px;
+      padding: 10px;
+      margin-top: 5px;
+    }
+    .article-form{
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 5px; 
+    }
+    .article-form button{
+      width:100%;
+      margin: auto;      
+    }
+  
+  }
+  
+
+  
+
+

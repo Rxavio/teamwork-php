@@ -36,13 +36,13 @@ $comment_content = substr($row['comment_content'],0,20);
 
 
 echo "<tr>";
-echo "<td> $comment_id</td>";
+echo "<td scope='row' data-label='comment id'> $comment_id</td>";
 // echo "<td> $comment_post_id</td>";
-echo "<td> $comment_author</td>";
-echo "<td> $comment_email</td>";
-echo "<td> $comment_content</td>";
-echo "<td> $comment_date</td>";
-echo "<td> $comment_status</td>";
+echo "<td data-label='by'> $comment_author</td>";
+echo "<td data-label='email'> $comment_email</td>";
+echo "<td data-label='comment'> $comment_content</td>";
+echo "<td data-label='created'> $comment_date</td>";
+echo "<td data-label='status'> $comment_status</td>";
 
  //echo "<td> some title</td>";
 
@@ -51,7 +51,7 @@ echo "<td> $comment_status</td>";
  while($row = mysqli_fetch_assoc($select_post_id_query)){
  $post_id = $row['post_id'];
  $post_title = $row['post_title']; 
-  echo "<td><a href='../pages/comment-article.php?p_id=$post_id'>$post_title</a></td>";
+  echo "<td data-label='on post'><a href='../pages/comment-article.php?p_id=$post_id'>$post_title</a></td>";
  }
  ?>
   <form method="post">   
@@ -81,6 +81,7 @@ echo "<td> $comment_status</td>";
 </table>
 
 </div>
+<?php  include "includes/footer.php";?>	
 
 
 

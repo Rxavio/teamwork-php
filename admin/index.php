@@ -45,7 +45,6 @@
            </div>
              </a>
           </div>  
-		</div>
 
 <div class="chart">
    <script type="text/javascript">
@@ -78,3 +77,4 @@
     <div id="columnchart_material" style="width: 'auto'; height: 500px;"></div>
 
   </div>
+<?php  include "includes/footer.php";?>	

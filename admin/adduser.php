@@ -38,7 +38,7 @@
         die("QUERY FAILED".mysqli_error($connection));
       }
 
-      $response="User Auccesfully Added";
+      $response="User Succesfully Added";
 
    }
 ?>

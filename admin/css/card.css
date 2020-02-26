@@ -1,0 +1,62 @@
+
+  .card {
+    background: #ffffff;
+    height: auto;					
+    box-sizing: border-box;	
+    float:left;
+    padding: 10px 10px;
+    margin-left: 35px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    width: 300px;
+    text-align: center; 
+    border: 1px solid #e1e1e1;
+  }
+ .chart {
+    height: auto;          
+    float:left;
+    background: #ffffff;
+    width: 100%;
+     margin-left: 5px;
+     padding-left: 5px;
+     padding-right: 5px;
+     padding-bottom: 5px;
+     border: 1px solid #e1e1e1;
+  }
+  .card .card-circle{
+    height: 150px;
+    width: 150px;
+     background: #594f8d;
+     border-radius: 150px; 
+      margin: auto;
+      padding: 30px;
+  }
+
+ .card .card-circle h4
+   {
+    font-size: 25px;
+    color: #ffffff;
+    
+}
+  
+  .card .card-circle p{
+    font-size: 16px;
+    color: #e1e1e1;
+    margin-top: 20px;
+    
+}
+
+@media screen and (max-width: 700px){
+
+
+   .chart {
+    height: 300px;          
+  }
+  .card {      
+   margin-left: 0px;
+   width: 100%;
+  
+  }
+
+}
+

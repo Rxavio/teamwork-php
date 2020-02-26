@@ -5,17 +5,17 @@
   --mainBlack: #000000;
   --color-primary: #263238;
   --color-secondary: darkgrey;
-
   --color-second: #5EC6FF;
   --mainSpacing: 0.1rem;
   --mainTransition: all .5s ease;
   }
 
-.create-page{
+.create-article-page{
   width: 85%;
   height:auto;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 50px;
 }
 .article-form{
   position: relative;
@@ -24,7 +24,7 @@
   padding: 20px;
   box-sizing: border-box;	
   float:left;
-    text-align: center;
+  text-align: center;
   border: 1px solid #e1e1e1;
   border-radius: 10px;
 
@@ -72,24 +72,10 @@
   float: left;
   margin-left:  10px;
 }
-
-/*.article-form button:hover,.form.button :active{
- color: var(--mainWhite);
-}*/
-
-@media only screen and (min-width: 300px) and (max-width: 600px){
-  .create-article-page{
-    width:100%;
-    margin-bottom: 0px;
-    padding: 10px;
-    margin-top: 5px;
-  }
-  .article-form{
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 5px; 
-  }
-  .article-form button{
-    width:100%;
-  }
+.article-form .response{
+  background: yellowgreen;
+  font-size: 20px;  
+ margin-left: 10px;
 }
+
+

@@ -45,22 +45,20 @@
   echo "<tr>";
   ?>
   <td><input class='checkBoxes' type='checkbox' name='checkBoxArray[]' value='<?php echo $post_id; ?>'></td>
-                                 
-                               
+                                                 
             <?php
-          echo "<td> $post_id</td>";
-          echo "<td> $post_author</td>";
-          echo "<td> $post_title</td>";
-
-          echo "<td> $post_date</td>";
-          echo "<td><img src='../pages/images/$post_image' alt='image' width='70' height='35'> </td>";
-          echo "<td> $post_content</td>";
-
+          echo "<td data-label='post id'> $post_id</td>";
+          echo "<td data-label='by'> $post_author</td>";
+          echo "<td data-label='title'> $post_title</td>";
+          echo "<td data-label='created'> $post_date</td>";
+          echo "<td data-label='image'><img src='../pages/images/$post_image' alt='image' width='70' height='35'> </td>";
+          echo "<td data-label='content'> $post_content</td>";
 
 
 
-          echo"<td>published</td>";
-          echo "<td>coding</td>";
+
+          echo"<td data-label='status'>published</td>";
+          echo "<td data-label='tags'>coding</td>";
           
 
          // echo "<td><a href=''>30</a></td>";
@@ -70,12 +68,12 @@
          $row = mysqli_fetch_array($send_comment_query);
          $comment_id = $row['comment_id'];
          $count_comments = mysqli_num_rows($send_comment_query);
-         echo "<td><a href=''>$count_comments</a></td>";
+         echo "<td data-label='comments'><a href=''>$count_comments</a></td>";
 
           //echo"<td><a href=''>95</a></td>";
-          echo "<td><a href=''>{$post_views_count}</a></td>";
+          echo "<td data-label='views'><a href=''>{$post_views_count}</a></td>";
 
-          echo "<td><a href='../pages/comment-article.php?p_id={$post_id}'>View Post</a></td>";
+          echo "<td data-label='preview'><a href='../pages/comment-article.php?p_id={$post_id}'>View Post</a></td>";
           
           echo "<td><button><a href='updatepost.php?p_id={$post_id}'>Edit</a></button></td>";
            ?> 
@@ -96,6 +94,7 @@
       </tbody>
       </table>       
       </div>
+     <?php  include "includes/footer.php";?>	
 
  <?php
 if(isset($_POST['delete'])){

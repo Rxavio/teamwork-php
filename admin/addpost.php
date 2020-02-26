@@ -38,7 +38,7 @@ $response="";
    ?>
     <div class="article-form">
     <form action="" method="post" enctype="multipart/form-data"autocomplete="on">
-        <h3>Add an article</h3><br>
+        <h3>Add a Post</h3><br>
 
     <input type="text"placeholder="Article Title" name="post_title" required="" minlength="6" >
 
