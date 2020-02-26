@@ -53,9 +53,7 @@
   ?>
 <div class="create-form">
 <form action="" method="post" enctype="multipart/form-data"autocomplete="on">
-
   <h3>Create account</h3> <br>
-
 <input type="text"placeholder="Firstname" name="user_firstname" required="">
 <input type="text" placeholder="Lastname" name="user_lastname"required="">
 <input type="text" placeholder="Username" name="username" required="">
@@ -74,7 +72,6 @@
 
 </div>
 </div>
-
 
 <!-- Footer-->
 <?php  include "includes/footer.php";?>	

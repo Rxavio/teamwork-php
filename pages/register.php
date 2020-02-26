@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../css/responsive.css"/>
 	<link rel="stylesheet" href="../css/nav.css"/>
   <link rel="stylesheet" href="../css/create.css"/>   
+  <link rel="stylesheet" href="../css/respomsg.css"/>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
 
 
      <?php
-   
+      $response="";
    if(isset($_POST['sign-up'])) {     
     $firstname      = escape($_POST['user_firstname']);
     $lastname       = escape($_POST['user_lastname']);
@@ -56,16 +57,15 @@
       if(!$create_user_query){
         die("QUERY FAILED".mysqli_error($connection));
       }
-
-       echo "<p>User Created</p>"; 
+       $response="User Succesfully Created";
 
    }
 ?>
-
-<!--header-->
 <div class="create-page">
+ <?php
+  echo"<b class='response'>$response</b>";
+  ?>
 <div class="create-form">
-
 <form action="" method="post" enctype="multipart/form-data">  
 
 <img src="../assets/icons/useravt.JPG">

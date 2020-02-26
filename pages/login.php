@@ -41,7 +41,6 @@ else{
 }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,11 +54,8 @@ else{
   <link rel="stylesheet" href="../css/main.css"/>
   <link rel="stylesheet" href="../css/responsive.css"/>
 	<link rel="stylesheet" href="../css/nav.css"/>
-  <link rel="stylesheet" href="../css/login.css"/>
-        
-     
+  <link rel="stylesheet" href="../css/login.css"/>    
 </head>
-
 <body>
             <nav>
                 <div class="hamburger">
@@ -74,9 +70,8 @@ else{
                   <!-- <li><a href="./login.php">Logout</a><li>  -->
                 </ul>
               </nav>			
-<!--header-->
 
-<div class="login-page">
+   <div class="login-page">
 
 	<div class="login-form">
   <form action="" method="post" enctype="multipart/form-data">
@@ -89,10 +84,9 @@ else{
 
   <button type="submit" name="login" >Login</button>
 	</form>
+   </div>
+	</div>
 
-           </div>
-		</div>
  <!--footer--> 
-
  <?php  include "includes/footer.php"; ?>
  
