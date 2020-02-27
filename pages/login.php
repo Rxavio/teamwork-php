@@ -23,6 +23,7 @@ if(isset($_POST['login'])) {
     $db_username=$row['username'];
     $db_user_email=$row['user_email'];
     $db_user_role=$row['user_role'];
+    $db_user_profile=$row['user_profile'];
     $db_user_password=$row['user_password'];
  }
 
@@ -32,6 +33,7 @@ $_SESSION['email']=$db_user_email;
 $_SESSION['firstname']=$db_user_firstname;
 $_SESSION['lastname']=$db_user_lastname;
 $_SESSION['user_role']=$db_user_role;
+$_SESSION['user_profile']=$db_user_profile;
 
 header("Location: ../admin");
 }

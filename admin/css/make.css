@@ -31,9 +31,6 @@
   .create-form h3{
       font-size: 20px;
   }
-  .create-form img{
-    float: left;
-}
   .create-form input{
     background: var(--mainWhite);
     width: 100%;

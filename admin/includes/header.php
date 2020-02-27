@@ -1,5 +1,6 @@
 <?php ob_start(); ?>
 <?php include "../includes/dbconnection.php"; ?>
+
 <?php session_start(); ?>
 <?php 
 
@@ -30,6 +31,7 @@ if(!isset($_SESSION['user_role'])) {
      <link rel="stylesheet" href="./css/card.css">
      <link rel="stylesheet" href="./css/admin.css">
     <link rel="stylesheet" href="./css/make.css"> 
+    <link rel="stylesheet" href="./css/profile.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="ckeditor/ckeditor.js"></script>
@@ -37,15 +39,21 @@ if(!isset($_SESSION['user_role'])) {
 <body>
         <header>
                 <div class="logo">
-                   <a href="../pages"><img src="./assets/team.png"></a>
-                     <p><b>Users Online: 44 </b></p>
+                 <a href="../pages"><img src="./assets/team.png"></a>
+                 <p><b>Users Online: 44 </b></p>
                 </div>
 
                 <ul class="menu-ctn">
                  <li id="menu">
-                <img src="./assets/pi.jpg">
+                 <?php if(isset($_SESSION['user_profile'])): ?>                                           
+                <img src="../pages/images/<?php echo $_SESSION['user_profile'] ?>">
+                <?php endif; ?>
+
                       <ul  id="dropdown">
-                      <li><a href="">Xavio</a></li>
+                      <?php if(isset($_SESSION['user_role'])): ?>                       
+                      <li><a href=""><?php echo $_SESSION['username'] ?></a></li>
+                      <?php endif; ?>
+
                       <li><a href="./profile">Profile</a></li>
                       <li><a href="../pages/logout.php">Log Out</a></li>
                     </ul>
