@@ -23,8 +23,8 @@
             <?php
             $query = "SELECT * FROM users";
              $select_all_users = mysqli_query($connection,$query);
-             $user_count = mysqli_num_rows( $select_all_users);
-             echo  "<h4>{$user_count}</h4> "
+             $users_count = mysqli_num_rows( $select_all_users);
+             echo  "<h4>{$users_count}</h4> "
              ?>
           
             <p>USERS</p>
@@ -44,21 +44,51 @@
             <p>COMMENTS</p>
            </div>
              </a>
-          </div>  
+          </div> 
+           
+          <?php 
 
+// $query = "SELECT * FROM posts WHERE post_status = 'published' ";
+// $select_all_published_posts = mysqli_query($connection,$query);
+// $post_published_count = mysqli_num_rows($select_all_published_posts);
+                                                                         
+// $query = "SELECT * FROM posts WHERE post_status = 'draft' ";
+// $select_all_draft_posts = mysqli_query($connection,$query);
+// $post_draft_count = mysqli_num_rows($select_all_draft_posts);
+
+
+// $query = "SELECT * FROM comments WHERE comment_status = 'unapproved' ";
+// $unapproved_comments_query = mysqli_query($connection,$query);
+// $unapproved_comment_count = mysqli_num_rows($unapproved_comments_query);
+
+
+// $query = "SELECT * FROM users WHERE user_role = 'user'";
+// $select_all_subscribers = mysqli_query($connection,$query);
+// $user_count = mysqli_num_rows($select_all_subscribers);
+
+   ?>
 <div class="chart">
-   <script type="text/javascript">
-
+  
+<script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'posts', 'users', 'comments'],
-          ['2017', 1000, 400, 200],
-          ['2018', 1170, 460, 250],
-          ['2019', 660, 1120, 300],
-          ['2020', 1030, 540, 350]
+          ['Data', 'count'],
+          <?php
+        // $element_text = ['All Posts', 'Comments', 'All Users'];       
+        // $element_count = [$post_count, $comment_countt, $users_count];
+        //   for($i=0;$i<3;$i++){
+        //  echo "['{$element_text[$i]}'".","."{$element_count[$i]}],";
+        //   }
+         
+          ?>
+
+         ['Posts', 50,],
+         ['comment', 150,],
+         ['users', 90,],
+                 
         ]);
 
         var options = {
@@ -73,8 +103,8 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>
-  
-    <div id="columnchart_material" style="width: 'auto'; height: 500px;"></div>
+
+<div id="columnchart_material" style="width: 'auto'; height: 500px;"></div>
 
   </div>
 <?php  include "includes/footer.php";?>	

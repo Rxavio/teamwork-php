@@ -17,7 +17,19 @@
       margin-left: -20px;
       margin-top: -5px;
     } 
-
+    .container button.print{
+      text-transform: uppercase;
+      outline: 0;
+      background: #4b4276;
+      color: #ffffff;
+      width: 10%;
+      padding: 8px;
+      cursor: pointer;
+      border-radius: 10px;
+      border: 1px solid #5EC6FF;
+      margin-top: 10px;
+         }    
+        
     table {
       border: 1px solid #e1e1e1;
       border-collapse: collapse;

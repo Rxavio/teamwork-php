@@ -1,7 +1,7 @@
 <?php  include "includes/header.php";?>	
 <?php  include "../includes/functions.php"; ?>
    
-<div class="post-list"> 
+<div class="post-list"id="printuser"> 
     <table class="centerTable">
         <thead>
           <tr>
@@ -79,8 +79,11 @@ echo '<td><button type="submit" name="delete">Delete</button></td>';
       }    
       ?>               
       </tbody>
-      </table>       
+      </table>     
 </div>
+
+<button class="print"onclick="printUserTable('printuser')">Print</button> 
+
 <?php  include "includes/footer.php";?>	
 <?php
 if(isset($_POST['delete'])){

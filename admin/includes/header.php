@@ -29,12 +29,21 @@ if(!isset($_SESSION['user_role'])) {
     <link rel="stylesheet" href="./css/topside.css">  
     <link rel="stylesheet" href="./css/write-article.css">
      <link rel="stylesheet" href="./css/card.css">
-     <link rel="stylesheet" href="./css/admin.css">
+     <link rel="stylesheet" href="./css/table.css">
     <link rel="stylesheet" href="./css/make.css"> 
     <link rel="stylesheet" href="./css/profile.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="ckeditor/ckeditor.js"></script>
+    <script>
+      function printUserTable(el){
+      let restorepage = document.body.innerHTML;
+      let printcontent = document.getElementById(el).innerHTML;
+      document.body.innerHTML = printcontent;
+      window.print();
+      document.body.innerHTML = restorepage;
+      }
+</script>
 </head>
 <body>
         <header>
