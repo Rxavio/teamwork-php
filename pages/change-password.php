@@ -69,25 +69,13 @@
 <form action="" method="post" enctype="multipart/form-data">  
 
 <!-- <img src="../assets/icons/useravt.JPG"> -->
-	<h3>Create your own account</h3> <br>
-
-<input type="text"placeholder="Firstname" name="user_firstname" required="">
-<input type="text" placeholder="Lastname" name="user_lastname"required="">
-<input type="text" placeholder="Username" name="username"required="">
-<input type="email" placeholder="Email" name="user_email" required="">
-<select name="user_role">
-  <option value="user">Select Options</option>
-  <option value="admin">Admin</option>
-  <option value="user">User</option>
-</select>   
-<input type="password" placeholder="password" name="user_password"required="" minlength="6">
-<p>Already Registered?<a href="./login">&nbsp;&nbsp;&nbsp;<u>Login</u></a></p>
-<button type="submit" name="sign-up" >sign up</button>
+	<h3>Change your Password</h3> <br>
+<input type="password" placeholder="current password" name="current_pass" id="mypass" required="" minlength="6">
+<input type="password" placeholder="New password" name="u_pass1" id="mypass" required="" minlength="6">
+<input type="password" placeholder="Confirm password" name="u_pass2" id="mypass" required="" minlength="6">
+<button type="submit" name="change" >Change</button>
 </form>
-
 </div>
 </div>
-
  <!--footer--> 
-  
  <?php  include "includes/footer.php"; ?>

@@ -78,7 +78,7 @@ else{
 	<div class="login-form">
   <form action="" method="post" enctype="multipart/form-data">
 
-	<img src="../assets/icons/useravt.JPG">
+	<!-- <img src="../assets/icons/useravt.JPG"> -->
 	<h3>Enter your credentials to log in</h3><br>
 	<input type="text"name="username"placeholder="Enter your Username" required="">
 	<input type="password"name="password"placeholder="Enter your Password" required="" minlength="6">
@@ -86,7 +86,7 @@ else{
 
   <button type="submit" name="login" >Login</button><br><br>
 
- <a href="./register "><u>Forget Password</u></a>
+ <a href="./change-password.php "><u>Forget Password</u></a>
 	</form>
    </div>
 	</div>
