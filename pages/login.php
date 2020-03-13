@@ -84,7 +84,9 @@ else{
 	<input type="password"name="password"placeholder="Enter your Password" required="" minlength="6">
 	<p>Not yet Registered? <a href="./register"> &nbsp;&nbsp;&nbsp;<u>Sign Up</u></a></p>
 
-  <button type="submit" name="login" >Login</button>
+  <button type="submit" name="login" >Login</button><br><br>
+
+ <a href="./register "><u>Forget Password</u></a>
 	</form>
    </div>
 	</div>
