@@ -1,6 +1,6 @@
         <?php  include "includes/header.php";?>	
         <h1>
-         Welcome to User Dashboard <?php echo strtoupper(get_user_name());?>
+         Welcome to user dashboard <?php echo strtolower(get_user_name());?>
         </h1>
         
            <div class="card"> 

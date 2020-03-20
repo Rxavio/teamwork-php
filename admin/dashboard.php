@@ -1,7 +1,7 @@
         <?php  include "includes/header.php";?>	
 
         <h1>
-         Welcome to Admin Dashboard <?php echo strtoupper(get_user_name());?>
+         Welcome to admin dashboard <?php echo strtolower(get_user_name());?>
         </h1>
            <div class="card"> 
            <a href="viewposts">  
