@@ -1,8 +1,9 @@
         <?php  include "includes/header.php";?>	
 
-        <h1>
+        <center><h1>
          Welcome to admin dashboard <?php echo strtolower(get_user_name());?>
         </h1>
+        </center>
            <div class="card"> 
            <a href="viewposts">  
             <div class="card-circle">

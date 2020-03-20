@@ -4,6 +4,8 @@
 $msg="";
 $response="";
  if(isset($_POST['create_post'])) {
+
+  $post_user_id = escape($_POST['post_user']);
   $post_author = escape($_POST['post_author']);
   $post_title = escape($_POST['post_title']);
   $post_image = escape($_FILES['image']['name']);
@@ -11,9 +13,9 @@ $response="";
   $post_date = escape(date('d-m-y'));
  
   $target="../pages/images/".basename($_FILES['image']['name']); 
-    $query = "INSERT INTO posts(post_author,post_title,post_date,post_image,post_content)  ";
+    $query = "INSERT INTO posts(post_user_id,post_author,post_title,post_date,post_image,post_content)  ";
            
-    $query .= "VALUES('{$post_author}','{$post_title}',now(),'{$post_image}','{$post_content}') "; 
+    $query .= "VALUES({$post_user_id},'{$post_author}','{$post_title}',now(),'{$post_image}','{$post_content}') "; 
            
     $create_post_query = mysqli_query($connection, $query);
 
@@ -35,13 +37,55 @@ $response="";
      <?php
    echo"<b class='response'>$response</b>";
    ?>
-    <div class="article-form">
+    <!-- <div class="article-form"> -->
+    <div class="create-form">
     <form action="" method="post" enctype="multipart/form-data"autocomplete="on">
         <h3>Add a Post</h3><br>
 
     <input type="text"placeholder="Article Title" name="post_title" required="" minlength="6" >
 
-    <input type="text" placeholder="Post Author" name="post_author">
+    <select name="post_user"style="display:none">
+   <!-- <option value="user">Select Options</option>
+   <option value="admin">Admin</option>
+    <option value="user">User</option> -->
+    <?php
+
+        $query_user = "SELECT * FROM users WHERE user_id=".loggedInUserId()."";
+        $select_users = mysqli_query($connection,$query_user);
+        
+        confirmQuery($select_users);
+
+        while($row = mysqli_fetch_assoc($select_users )) {
+        $user_id = $row['user_id'];
+        $username = $row['username'];
+        echo "<option value={$user_id}>{$username}</option>";
+                     
+        }
+
+?>
+   </select>
+
+
+   <select name="post_author" style="display:none">
+  <!-- <option value="user">Select Options</option>
+  <option value="admin">Admin</option>
+  <option value="user">User</option> -->
+  <?php
+        $query_user = "SELECT * FROM users WHERE user_id=".loggedInUserId()."";
+        $select_users = mysqli_query($connection,$query_user);
+        
+        confirmQuery($select_users);
+
+        while($row = mysqli_fetch_assoc($select_users )) {
+        //$user_id = $row['user_id'];
+        $username = $row['username'];
+        echo "<option value={$username}>{$username}</option>";
+                     
+        }
+   ?>  
+   </select>
+
+    <!-- <input type="hidden" placeholder="Post Author" name="post_author"> -->
     
       <label class="lblphoto" for="photo">Upload Image</label>
     <input type="file"name="image" id="image">

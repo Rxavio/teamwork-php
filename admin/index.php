@@ -1,16 +1,20 @@
         <?php  include "includes/header.php";?>	
-        <h1>
+        <?php
+
+$post_count = count_records(get_all_user_posts());
+$comment_count = count_records(get_all_posts_user_comments());
+
+?>
+       <center> <h1>
          Welcome to user dashboard <?php echo strtolower(get_user_name());?>
         </h1>
+        </center>
         
            <div class="card"> 
            <a href="viewposts">  
             <div class="card-circle">
 
             <?php
-            $query = "SELECT * FROM posts";
-             $select_all_posts = mysqli_query($connection,$query);
-             $post_count = mysqli_num_rows( $select_all_posts);
              echo  "<h4>{$post_count}</h4> "
              ?>
 
@@ -38,9 +42,6 @@
             <a href="comments">   
             <div class="card-circle">
             <?php
-            $query = "SELECT * FROM comments";
-             $select_all_comments = mysqli_query($connection,$query);
-             $comment_count = mysqli_num_rows( $select_all_comments);
              echo"<h4>{$comment_count}</h4> "
              ?>
             <p>COMMENTS</p>
