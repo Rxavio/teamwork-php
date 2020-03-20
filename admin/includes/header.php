@@ -1,5 +1,6 @@
 <?php ob_start(); ?>
 <?php include "../includes/dbconnection.php"; ?>
+<?php  include "../includes/functions.php"; ?>
 
 <?php session_start(); ?>
 <?php 
@@ -10,12 +11,12 @@ if(!isset($_SESSION['user_role'])) {
 
     }
 
- if(isset($_SESSION['user_role'])) {
+//  if(isset($_SESSION['user_role'])) {
 
-     if($_SESSION['user_role']!=='admin'){
-        header("Location:../pages/index");
-    }	
- } 
+//      if($_SESSION['user_role']!=='admin'){
+//         header("Location:../pages/index");
+//     }	
+//  } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,12 +75,18 @@ if(!isset($_SESSION['user_role'])) {
             
                   <nav>
                     <ul>
-        <li><a href="index"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="index"><i class="fas fa-home"></i> My Data</a></li>
+            <?php if(is_admin()): ?>
+            <li><a href="dashboard.php"><i class="fas fa-home"></i> Dashboard</a></li>
+            <?php endif ?>
             <li><a href="viewposts"><i class="fas fa-address-card"></i> View Posts</a></li>
             <li><a href="addpost"><i class="fas fa-address-card"></i> Add post</a></li>
             <li><a href="comments"><i class="fas fa-project-diagram"></i> Comments</a></li>
+            
+            <?php if(is_admin()): ?>
             <li><a href="viewusers"><i class="fas fa-blog"></i> View Users</a></li>
             <li><a href="adduser"><i class="fas fa-blog"></i> Add User</a></li>
+            <?php endif ?>
             <li><a href="profile"><i class="fas fa-user"></i> Profile</a></li>            
             </ul>
                   </nav>

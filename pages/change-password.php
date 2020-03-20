@@ -36,34 +36,31 @@
 
 
      <?php
-      $response="";
-   if(isset($_POST['sign-up'])) {     
-    $firstname      = escape($_POST['user_firstname']);
-    $lastname       = escape($_POST['user_lastname']);
-    $username       = escape($_POST['username']);
-    $email          = escape($_POST['user_email']);
-    $user_role      = escape($_POST['user_role']);
-    $password        = escape($_POST['user_password']);
-    $user_created    = escape(date('d-m-y'));
+  //     $response="";
+  //  if(isset($_POST['change'])) {     
+   
+  //   $current_pass      = escape($_POST['current_pass']);
+  //   $new_pass1         = escape($_POST['new_pass1']);
+  //   $new_pass2         = escape($_POST['new_pass1']);
     
-   $password = password_hash( $password, PASSWORD_BCRYPT, array('cost' => 12));
+  //  $password = password_hash( $password, PASSWORD_BCRYPT, array('cost' => 12));
           
-      $query = "INSERT INTO users(user_firstname, user_lastname,username,user_email,user_password,user_role,user_created) ";
+  //     $query = "INSERT INTO users(user_firstname, user_lastname,username,user_email,user_password,user_role,user_created) ";
              
-      $query .= "VALUES('{$firstname}','{$lastname}','{$username}','{$email}','{$password}','user',now()) "; 
+  //     $query .= "VALUES('{$firstname}','{$lastname}','{$username}','{$email}','{$password}','user',now()) "; 
              
-      $create_user_query = mysqli_query($connection, $query);  
+  //     $create_user_query = mysqli_query($connection, $query);  
 
-      if(!$create_user_query){
-        die("QUERY FAILED".mysqli_error($connection));
-      }
-       $response="User Succesfully Created";
+  //     if(!$create_user_query){
+  //       die("QUERY FAILED".mysqli_error($connection));
+  //     }
+  //      $response="User Succesfully Created";
 
-   }
+  //  }
 ?>
 <div class="create-page">
  <?php
-  echo"<b class='response'>$response</b>";
+  // echo"<b class='response'>$response</b>";
   ?>
 <div class="create-form">
 <form action="" method="post" enctype="multipart/form-data">  
@@ -71,8 +68,8 @@
 <!-- <img src="../assets/icons/useravt.JPG"> -->
 	<h3>Change your Password</h3> <br>
 <input type="password" placeholder="current password" name="current_pass" id="mypass" required="" minlength="6">
-<input type="password" placeholder="New password" name="u_pass1" id="mypass" required="" minlength="6">
-<input type="password" placeholder="Confirm password" name="u_pass2" id="mypass" required="" minlength="6">
+<input type="password" placeholder="New password" name="new_pass1" id="mypass" required="" minlength="6">
+<input type="password" placeholder="Confirm password" name="new_pass2" id="mypass" required="" minlength="6">
 <button type="submit" name="change" >Change</button>
 </form>
 </div>

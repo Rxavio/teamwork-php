@@ -1,5 +1,5 @@
 <?php  include "includes/header.php";?>	
-<?php  include "../includes/functions.php"; ?>
+
    
 <div class="post-list"> 
     <table class="centerTable">

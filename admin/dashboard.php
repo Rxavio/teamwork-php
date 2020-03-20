@@ -1,11 +1,14 @@
         <?php  include "includes/header.php";?>	
+
         <h1>
-         Welcome to User Dashboard <?php echo strtoupper(get_user_name());?>
+         Welcome to Admin Dashboard <?php echo strtoupper(get_user_name());?>
         </h1>
-        
            <div class="card"> 
            <a href="viewposts">  
             <div class="card-circle">
+
+
+           
 
             <?php
             $query = "SELECT * FROM posts";
@@ -20,16 +23,16 @@
           </div> 
 
              <div class="card"> 
-              <a href=" ">   
+              <a href="viewusers">   
             <div class="card-circle">
-            <!--  -->
+            <?php
+            $query = "SELECT * FROM users";
+             $select_all_users = mysqli_query($connection,$query);
+             $users_count = mysqli_num_rows( $select_all_users);
+             echo  "<h4>{$users_count}</h4> "
+             ?>
           
-            <h4>
-           <?php echo strtoupper(get_user_name());?>
-           </h4>
-            
-          
-            <p>USER</p>
+            <p>USERS</p>
            </div>
              </a>
           </div> 
