@@ -80,18 +80,20 @@ $comment_count = count_records(get_all_posts_user_comments());
         var data = google.visualization.arrayToDataTable([
           ['Data', 'count'],
           <?php
-        // $element_text = ['All Posts', 'Comments', 'All Users'];       
-        // $element_count = [$post_count, $comment_countt, $users_count];
-        //   for($i=0;$i<3;$i++){
-        //  echo "['{$element_text[$i]}'".","."{$element_count[$i]}],";
-        //   }
+        $element_text = ['All Posts','Comments'];       
+        $element_count = [$post_count, $comment_count];
+
+          for($i=0;$i<2;$i++){
+         echo "['{$element_text[$i]}'".","."{$element_count[$i]}],";
+          }
          
           ?>
 
-         ['Posts', 50,],
-         ['comment', 150,],
-         ['users', 90,],
-                 
+        //  ['Posts', 60,],
+        //  ['comment', 350,],
+        //  ['users', 15,],
+        // ['categories', 10,],
+         
         ]);
 
         var options = {
