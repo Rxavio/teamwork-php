@@ -77,7 +77,7 @@ if(!isset($_SESSION['user_role'])) {
                     <ul>
             <li><a href="index"><i class="fas fa-home"></i> My Data</a></li>
             <?php if(is_admin()): ?>
-            <li><a href="dashboard.php"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
             <?php endif ?>
             <li><a href="viewposts"><i class="fas fa-address-card"></i> View Posts</a></li>
             <li><a href="addpost"><i class="fas fa-address-card"></i> Add post</a></li>

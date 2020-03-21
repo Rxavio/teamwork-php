@@ -23,6 +23,7 @@ if(!isset($_SESSION['user_role'])) {
   <link rel="stylesheet" href="./css/pagination.css"/>
   <link rel="stylesheet" href="./css/respo.css"/>
   <link rel="stylesheet" href="./css/comment.css"/>
+  <link rel="stylesheet" href="./css/commentimg.css"/>
   <link rel="stylesheet" href="../css/edit-article.css"/>
   <link rel="stylesheet" href="../css/reason.css"/>
   <link rel="stylesheet" href="../css/reasoncomment.css"/>

@@ -153,15 +153,7 @@
     border:none;
     background: var(--primaryColor);
   }
-  .comment-posted{
-    letter-spacing: var(--mainSpacing); 
-    background: var(--mainWhite);
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    padding: 10px;
-   display: block;
-  }
+  
   .comment-posted .comment-author{
   float: left;
   text-align: left;
@@ -174,7 +166,7 @@
     margin-bottom: auto;
   }
   
-  .comment-posted p img{
+  .comment-posted img{
     width:14px;
     height: 14px;
     opacity: 0.6;

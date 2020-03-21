@@ -57,7 +57,8 @@
       if(!$create_user_query){
         die("QUERY FAILED".mysqli_error($connection));
       }
-       $response="User Succesfully Created";
+      //  $response="User Succesfully Created";
+       header("Location: login");
 
    }
 ?>
@@ -75,7 +76,7 @@
 <input type="text" placeholder="Lastname" name="user_lastname"required="">
 <input type="text" placeholder="Username" name="username"required="">
 <input type="email" placeholder="Email" name="user_email" required="">
-<select name="user_role">
+<select name="user_role" style="display:none">
   <option value="user">Select Options</option>
   <option value="admin">Admin</option>
   <option value="user">User</option>

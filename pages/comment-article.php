@@ -84,7 +84,8 @@ if(isset($_POST['create_comment'])) {
         }
 
     }
-    header("Location:index.php");
+    // header("Location:index.php");
+    header("Location:comment-article.php?p_id={$the_post_id}");
 
 }
 
@@ -96,10 +97,23 @@ if(isset($_POST['create_comment'])) {
 <form action="" method="post" enctype="multipart/form-data"autocomplete="on">
 <h4>Comment:</h4>
 <div class="addcomment">
-   <input type="text" name="comment_author" placeholder="Enter your name ..."> 
-  <input type="email" name="comment_email" placeholder="Enter Email ...">
-  <input type="text" name="comment_content" placeholder="write your comment..." > 
-   <button type="submit" name="create_comment" class="commentbtn">Comment</button>
+
+<?php if(isset($_SESSION['user_role'])): ?>                       
+<input type="hidden" name="comment_author"value="<?php echo $_SESSION['username'] ?>"> 
+<?php endif; ?>
+
+<?php if(isset($_SESSION['user_role'])): ?>                       
+<input type="hidden" name="comment_email"value="<?php echo $_SESSION['email'] ?>"> 
+<?php endif; ?>
+
+<!-- <input type="text" name="comment_author" placeholder="Enter your name ...">  -->
+<!-- <input type="email" name="comment_email" placeholder="Enter Email ..."> -->
+
+  <!-- <input type="text" name="comment_content" placeholder="write your comment..." >  -->
+
+  <textarea name="comment_content" rows="10" cols="50" placeholder="Your comment..."  ></textarea>
+   
+  <button type="submit" name="create_comment" class="commentbtn">Comment</button>
 </div>
 </form>
 <!-- <hr> -->
@@ -121,8 +135,15 @@ $comment_author = $row['comment_author'];
     ?>
   <div class="comment-posted">
 
-  <i class="comment-author">@<?php echo $comment_author; ?></i><br>
-  <p> <?php echo $comment_content; ?></p>
+  <i class="comment-author">
+  <?php if(isset($_SESSION['user_profile'])): ?>                                           
+  <img src="images/agent.jpg">
+
+ <?php endif; ?>
+  <?php echo $comment_author; ?></i><br><br>
+  
+   <p> <?php echo $comment_content; ?></p>
+
 </div><br>
 
 <?php } } }?> 

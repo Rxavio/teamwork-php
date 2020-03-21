@@ -1,0 +1,31 @@
+.comment-posted img{
+    width:24px;
+    height: 24px;
+    opacity: 1;
+  }
+
+  .comment-posted p{
+   margin-left: 30px;
+  }
+
+  .comment-posted{
+    background: var(--mainGrey);
+    width: auto;
+    height: 80px;
+    border-radius: 20px;
+    padding: 10px;
+    display: block;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.comment textarea{
+    letter-spacing: var(--mainSpacing); 
+    background: var(--mainWhite);
+    width: 90%;
+    border: 1px solid #e1e1e1;
+    outline: 0;
+   margin-top: 20px;
+  }
