@@ -26,7 +26,8 @@
 <tbody>
 <?php
 
-  $query = "SELECT * FROM posts ORDER BY post_id DESC ";
+  // $query = "SELECT * FROM posts ORDER BY post_id DESC ";
+  $query = "SELECT * FROM posts WHERE post_user_id=".loggedInUserId()." ORDER BY post_id DESC ";
   $select_post = mysqli_query($connection,$query);  
   
   while($row = mysqli_fetch_assoc($select_post)) {

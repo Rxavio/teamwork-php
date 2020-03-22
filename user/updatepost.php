@@ -74,7 +74,7 @@ if(isset($_POST['update_post'])) {
   <h3>Update post</h3> <br>
 
 <input type="text"name="post_title" required="" value="<?php echo $post_title; ?>">
-<input type="text" name="post_author"required="" value="<?php echo $post_author; ?>">
+<input type="hidden" name="post_author"required="" value="<?php echo $post_author; ?>">
 
  <label class="lblphoto" for="photo">Upload Profile</label>
    <input type="file" name="image" id="image"><br>
