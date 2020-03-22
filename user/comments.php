@@ -22,7 +22,8 @@
 <tbody>
 <?php
 
-$query = "SELECT * FROM comments ORDER BY comment_id DESC ";
+$query = "SELECT * FROM posts INNER JOIN comments ON posts.post_id = comments.comment_post_id
+WHERE post_user_id=".loggedInUserId()." ORDER BY comment_id DESC";
 $select_comments = mysqli_query($connection,$query);  
 
 while($row = mysqli_fetch_assoc($select_comments)) {
