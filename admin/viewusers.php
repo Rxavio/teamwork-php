@@ -5,7 +5,7 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>Firstzname</th>
+            <th>Firstname</th>
             <th>Lastname</th>
             <th>Username</th>
             <th>Email</th>
