@@ -1,0 +1,43 @@
+.selectoption select{
+    background: var(--mainWhite);
+    width: 20%;
+    margin-left: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    outline: 0;
+    border-radius: 10px;  
+}
+.selectoption input{
+    text-transform: uppercase;
+    outline: 0;
+    background: #4b4276;
+    width: 10%;
+    border: 0;
+    padding: 8px;
+    color: var(--mainWhite);
+    cursor: pointer;
+    border-radius: 10px;
+
+}
+.selectoption a{
+    outline: 0;
+    background: #e1e1e1;
+    width: 10%;
+    border: 0;
+    padding: 8px;
+    color: var(--mainBlack);
+    cursor: pointer;
+    border-radius: 10px;
+
+}
+.selectoption .clickbtn{
+/* background:  rgb(40, 106, 247);*/
+  margin-left: 22%;
+  margin-top: -35px;	
+}
+.selectoption{
+margin-bottom: 10px;
+
+}
+

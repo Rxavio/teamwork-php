@@ -33,6 +33,7 @@ if(!isset($_SESSION['user_role'])) {
      <link rel="stylesheet" href="./css/card.css">
      <link rel="stylesheet" href="./css/table.css">
     <link rel="stylesheet" href="./css/make.css"> 
+    <link rel="stylesheet" href="./css/option.css"> 
     <link rel="stylesheet" href="./css/profile.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

@@ -1,8 +1,81 @@
 <?php  include "includes/header.php";?>	
 
+<?php
+
+if(isset($_POST['checkBoxArray'])) {
+
+
+    
+    foreach($_POST['checkBoxArray'] as $postValueId ){
+        
+  $bulk_options = $_POST['bulk_options'];
+        
+        switch($bulk_options) {
+			
+        case 'published':
+        
+$query = "UPDATE posts SET post_status = '{$bulk_options}' WHERE post_id = {$postValueId}  ";
+        
+ $update_to_published_status = mysqli_query($connection,$query);       
+confirmQuery($update_to_published_status);
+
+
+            
+         break;
+            
+            
+              case 'draft':
+        
+$query = "UPDATE posts SET post_status = '{$bulk_options}' WHERE post_id = {$postValueId}  ";
+        
+ $update_to_draft_status = mysqli_query($connection,$query);
+            
+confirmQuery($update_to_draft_status);
+  
+            
+         break;
+
+
+        } 
+
+
+
+      }
+    }
+      
+
+         ?>
+
+
+
+
+
    
 <div class="post-list"> 
-    <table class="centerTable">
+
+<form action="" method='post'>
+<table class="centerTable">
+ <div id="bulkOptionContainer" class="selectoption">
+<select class="" name="bulk_options" id="">
+<option value="">Select Options</option>
+<option value="published">Publish</option>
+<option value="draft">Draft</option>
+<option value="delete">Delete</option>
+ <option value="clone">Clone</option>
+</select>
+
+<div class="clickbtn">
+<input type="submit" name="submit" class="" value="Apply">
+<a class="" href="#">Add New</a>
+</div>
+
+</div> 
+   
+
+
+
+
+
         <thead>
           <tr>
           <th><input id="selectAllBoxes" type="checkbox"></th>
@@ -36,7 +109,7 @@
    $post_title = substr($row['post_title'],0,20);
   $post_date = $row['post_date'];
   $post_image = $row['post_image'];
-  // $post_status = $row['post_status'];
+  $post_status = $row['post_status'];
   $post_content = substr($row['post_content'],0,20);
   // $post_tags = $row['post_tags'];
   $post_views_count = $row['post_views_count'];
@@ -56,7 +129,7 @@
 
 
 
-          echo"<td data-label='status'>published</td>";
+          echo"<td data-label='status'>$post_status</td>";
           echo "<td data-label='tags'>coding</td>";
           
 
@@ -91,7 +164,8 @@
       }    
       ?> 
       </tbody>
-      </table>       
+      </table>
+      </form>       
       </div>
      <?php  include "includes/footer.php";?>	
 
