@@ -10,12 +10,13 @@ $response="";
   $post_title = escape($_POST['post_title']);
   $post_image = escape($_FILES['image']['name']);
   $post_content =escape($_POST['post_content']);
+  $post_status =escape($_POST['post_status']);
   $post_date = escape(date('d-m-y'));
  
   $target="../pages/images/".basename($_FILES['image']['name']); 
-    $query = "INSERT INTO posts(post_user_id,post_author,post_title,post_date,post_image,post_content)  ";
+    $query = "INSERT INTO posts(post_user_id,post_author,post_title,post_date,post_image,post_content,post_status)  ";
            
-    $query .= "VALUES({$post_user_id},'{$post_author}','{$post_title}',now(),'{$post_image}','{$post_content}') "; 
+    $query .= "VALUES({$post_user_id},'{$post_author}','{$post_title}',now(),'{$post_image}','{$post_content}', '{$post_status}') "; 
            
     $create_post_query = mysqli_query($connection, $query);
 
@@ -91,6 +92,11 @@ $response="";
     <input type="file"name="image" id="image">
 
 <textarea name="post_content" rows="10" cols="50" placeholder="write your article..." required="" minlength="30" ></textarea>
+
+<select name="post_status">
+   <option value="">Status</option>
+   <option value="draft">Draft</option>
+   </select>
 
         <button type="submit" name="create_post" >Post article</button>
         </form>

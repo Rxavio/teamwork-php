@@ -37,7 +37,7 @@
    $post_title = substr($row['post_title'],0,20);
   $post_date = $row['post_date'];
   $post_image = $row['post_image'];
-  // $post_status = $row['post_status'];
+  $post_status = $row['post_status'];
   $post_content = substr($row['post_content'],0,20);
   // $post_tags = $row['post_tags'];
   $post_views_count = $row['post_views_count'];
@@ -53,11 +53,7 @@
           echo "<td data-label='created'> $post_date</td>";
           echo "<td data-label='image'><img src='../pages/images/$post_image' alt='image' width='70' height='35'> </td>";
           echo "<td data-label='content'> $post_content</td>";
-
-
-
-
-          echo"<td data-label='status'>published</td>";
+          echo"<td data-label='status'>$post_status</td>";
           echo "<td data-label='tags'>coding</td>";
           
 

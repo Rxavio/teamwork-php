@@ -61,7 +61,8 @@ confirmQuery($update_to_draft_status);
       // $post_tags          = $row['post_tags']; 
       $post_content       = $row['post_content'];
 
-      } $query = "INSERT INTO posts(post_user_id,post_author,post_title,post_date,post_image,post_content,post_status)  ";
+      }
+       $query = "INSERT INTO posts(post_user_id,post_author,post_title,post_date,post_image,post_content,post_status)  ";
     
       $query .= "VALUES({$post_user_id},'{$post_author}','{$post_title}',now(),'{$post_image}','{$post_content}', '{$post_status}') "; 
               
@@ -99,7 +100,7 @@ confirmQuery($update_to_draft_status);
 
 <div class="clickbtn">
 <input type="submit" name="submit" class="" value="Apply">
-<a class="" href="#">Add New</a>
+<a href="addpost">Add New</a>
 </div>
 
 </div> 
